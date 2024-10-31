@@ -18,7 +18,8 @@
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 5px solid #fff;
+    border-style: outset;
   }
 
   h1 { 
@@ -28,7 +29,7 @@
 
 
     @media (max-width: 768px) {
-      font-size: 1.5rem;
+      font-size: 2rem;
       text-align: center;
     }
   }
