@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+import profileImage from './assets/profile-image.jpeg'
+
 
 import './App.css'
 
-import profileImage from './assets/profile-image.jpeg'
-
-import { useState, useEffect } from 'react';
-
 function TypingAnimation({ text }: { text: string}) {
   const [displayedText, setDisplayedText] = useState('');
-  const typingSpeed = 100; // Tempo entre as letras em ms
+  const typingSpeed = 100;
 
   useEffect(() => {
       let index = 0;
@@ -26,7 +25,7 @@ function TypingAnimation({ text }: { text: string}) {
   }, [text]);
 
   return (
-      <div style={{ width: 350 }}>
+      <div className="title-container">
           <span 
               className="title"
               >{displayedText}</span>
