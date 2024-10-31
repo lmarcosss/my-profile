@@ -23,14 +23,14 @@
     border-style: outset;
   }
 
-  h1 { 
+  .title { 
     max-width: 350px;
     text-align: start;
     font-size: 2.5rem;
 
 
     @media (max-width: 655px) {
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: center;
     }
   }

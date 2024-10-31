@@ -4,7 +4,47 @@ import './App.css'
 
 import profileImage from './assets/profile-image.jpeg'
 
-// const profileImage = "https://firebasestorage.googleapis.com/v0/b/my-profile-afdb3.appspot.com/o/profile-image.jpeg?alt=media&token=6bc1522b-4ac5-470b-977c-5053d811eed9"
+import { useState, useEffect } from 'react';
+
+function TypingAnimation({ text }: { text: string}) {
+  const [displayedText, setDisplayedText] = useState('');
+  const typingSpeed = 100; // Tempo entre as letras em ms
+
+  useEffect(() => {
+      let index = 0;
+
+      const typingInterval = setInterval(() => {
+          if (index < text.length) {
+              setDisplayedText((prev) => prev + text.charAt(index));
+              index += 1;
+          } else {
+              clearInterval(typingInterval); 
+          }
+      }, typingSpeed);
+
+      return () => clearInterval(typingInterval);
+  }, [text]);
+
+  return (
+      <div style={{ width: 350 }}>
+          <span 
+              className="title"
+              >{displayedText}</span>
+          <motion.span
+              animate={{ opacity: [0, 1] }}
+              transition={{
+                  duration: 1,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+              }}
+              className="title"
+          >
+              |
+          </motion.span>
+      </div>
+  );
+}
+
 
 export default function App() {
   return (
@@ -17,16 +57,7 @@ export default function App() {
         }}
         className='profile-image' src={profileImage}
       />
-        {/* <img className='profile-image' src={profileImage} /> */}
-      {/* </motion.image> */}
-      <motion.h1
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 0.5,
-          duration: 2,
-        }}
-      >Hi, I'm Leo. <br/>I'm a software developer.</motion.h1>
+      <TypingAnimation text="Hii, I'm Leo. I'm a software developer." />
     </div>
   )
 }
