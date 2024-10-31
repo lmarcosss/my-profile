@@ -1,18 +1,20 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 2rem;
-  height: 100vh;
   position: relative;
-  
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+
   @media (max-width: 655px) {
     flex-direction: column;
   }

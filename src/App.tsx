@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
 import profileImage from './assets/profile-image.jpeg'
 
-
 import './App.css'
 
 function TypingAnimation({ text }: { text: string}) {
@@ -46,6 +45,7 @@ function TypingAnimation({ text }: { text: string}) {
 
 
 export default function App() {
+
   return (
     <div className='container'>
       <motion.img
