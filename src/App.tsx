@@ -52,7 +52,7 @@ export default function App() {
             />
             <div className="flex flex-row gap-8 p-8 items-center justify-center w-72">
               {urls.map(({ url, icon: Icon, hover }) => (
-                <a href={url} target="_blank">
+                <a key={url} href={url} target="_blank">
                   <Icon className={`size-7 ${hover}`} />
                 </a>
               ))}
