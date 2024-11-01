@@ -16,7 +16,6 @@
   box-sizing: border-box;
 
   @media (max-width: 655px) {
-    padding-top: 4rem;
     justify-content: flex-start;
     flex-direction: column;
   }
