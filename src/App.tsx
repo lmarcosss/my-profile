@@ -10,7 +10,6 @@ import {
   GitHubLogoIcon,
   InstagramLogoIcon,
   LinkedInLogoIcon,
-  TwitterLogoIcon,
 } from '@radix-ui/react-icons'
 
 const urls = [
