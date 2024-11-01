@@ -25,7 +25,7 @@ export function TypingAnimation({ text }: TypingAnimationProps) {
   }, [index, text])
 
   return (
-    <div className="w-72">
+    <div className="w-72 h-32">
       <span className="text-3xl font-bold">
         {displayedText}
         <motion.span
