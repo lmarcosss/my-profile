@@ -17,9 +17,6 @@
   -moz-osx-font-smoothing: grayscale;
 
   position: relative;
-
-  margin: 0;
-  padding: 0;
 }
 
 a {
@@ -64,6 +61,13 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+html, body, #root {
+  height: 100dvh;
+  margin: 0;
+  padding:0;
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: light) {
