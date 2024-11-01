@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
 import profileImage from './assets/profile-image.jpeg'
+import { ThemeProvider } from "./components/theme-provider";
+import { ModeToggle } from "./components/mode-toggle";
 
 import './App.css'
 
@@ -47,6 +49,7 @@ function TypingAnimation({ text }: { text: string}) {
 export default function App() {
 
   return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <div className='container'>
       <motion.img
         initial={{ scale: 0 }}
@@ -57,6 +60,9 @@ export default function App() {
         className='profile-image' src={profileImage}
       />
       <TypingAnimation text="Hii, I'm Leo. I'm a software developer." />
+
+      <ModeToggle />
     </div>
+    </ThemeProvider>
   )
 }
