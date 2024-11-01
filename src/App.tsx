@@ -8,22 +8,22 @@ import './App.css'
 
 function TypingAnimation({ text }: { text: string}) {
   const [displayedText, setDisplayedText] = useState('');
+  const [index, setIndex] = useState(0);
   const typingSpeed = 100;
 
   useEffect(() => {
-      let index = 0;
-
       const typingInterval = setInterval(() => {
           if (index < text.length) {
               setDisplayedText((prev) => prev + text.charAt(index));
-              index += 1;
+              
+              setIndex((prev) => prev + 1);
           } else {
               clearInterval(typingInterval); 
           }
       }, typingSpeed);
 
       return () => clearInterval(typingInterval);
-  }, [text]);
+  }, [index, text]);
 
   return (
       <div className="title-container">
@@ -59,7 +59,7 @@ export default function App() {
         }}
         className='profile-image' src={profileImage}
       />
-      <TypingAnimation text="Hii, I'm Leo. I'm a software developer." />
+      <TypingAnimation text="Hi, I'm Leo. I'm a software developer." />
 
       <ModeToggle />
     </div>
