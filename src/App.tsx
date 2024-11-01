@@ -10,6 +10,7 @@ import {
   GitHubLogoIcon,
   InstagramLogoIcon,
   LinkedInLogoIcon,
+  TwitterLogoIcon,
 } from '@radix-ui/react-icons'
 
 const urls = [
@@ -44,7 +45,7 @@ export default function App() {
               transition={{
                 type: 'spring',
               }}
-              className="w-40 h-40 object-cover rounded-full border-4 border-gray-400"
+              className="w-44 h-44 object-cover rounded-full border-4 border-gray-400"
               src={profileImage}
               style={{
                 imageRendering: 'crisp-edges',
