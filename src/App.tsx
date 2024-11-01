@@ -44,7 +44,7 @@ export default function App() {
               transition={{
                 type: 'spring',
               }}
-              className="w-44 h-44 object-cover rounded-full border-4 border-gray-400"
+              className="w-48 h-48 object-cover rounded-full border-4 dark:border-black border-white ring-emerald-500 ring-4 ring-none"
               src={profileImage}
               style={{
                 imageRendering: 'crisp-edges',
