@@ -42,32 +42,38 @@ export default function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header />
 
-      <div className="w-full h-full flex flex-col justify-start items-center p-16">
-        <AnimatedCard>
-          <motion.img
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{
-              type: 'spring',
-            }}
-            className="w-48 h-48 object-cover rounded-full border-4 border-transparent
-              ring-emerald-500 ring-4 ring-none"
-            src={profileImage}
-            style={{
-              imageRendering: 'crisp-edges',
-            }}
-          />
-        </AnimatedCard>
+      <div className="w-full h-full flex justify-center items-center">
+        <div className="flex justify-center flex-wrap p-16">
+          <div>
+            <AnimatedCard>
+              <motion.img
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: 'spring',
+                }}
+                className="w-48 h-48 object-cover rounded-full border-4 border-transparent
+                  ring-emerald-500 ring-4 ring-none"
+                src={profileImage}
+                style={{
+                  imageRendering: 'crisp-edges',
+                }}
+              />
+            </AnimatedCard>
 
-        <div className="flex gap-8 p-8 items-center justify-center w-72">
-          {urls.map(({ url, icon: Icon, hover }) => (
-            <a key={url} href={url} target="_blank">
-              <Icon className={`size-7 ${hover}`} />
-            </a>
-          ))}
+            <div className="flex gap-8 pt-8 justify-center w-72">
+              {urls.map(({ url, icon: Icon, hover }) => (
+                <a key={url} href={url} target="_blank">
+                  <Icon className={`size-7 ${hover}`} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-[180px] flex items-center justify-center">
+            <TypingAnimation text="Hi, I'm Leo. I'm a software developer." />
+          </div>
         </div>
-
-        <TypingAnimation text="Hi, I'm Leo. I'm a software developer." />
       </div>
 
       <ModeToggle />
