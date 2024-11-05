@@ -31,7 +31,7 @@ export const AnimatedCard = ({
         <motion.div
           className={`absolute inset-0 flex items-center justify-center rounded-full
             bg-slate-950 text-white ${flipped ? '' : 'rotate-y-180'} p-4 border-4
-            border-transparent ring-red-400 ring-4 ring-none`}
+            border-transparent ring-lime-400 ring-4 ring-none`}
           animate={{ rotateY: flipped ? 0 : -180 }}
           transition={{ duration: 0.6 }}
           initial={false}
@@ -41,7 +41,7 @@ export const AnimatedCard = ({
             You found the easter egg!
             <br />
             <a
-              className="underline text-red-400"
+              className="underline text-lime-400"
               target="_blank"
               href="https://www.youtube.com/watch?v=oowBXzfcl90"
             >
