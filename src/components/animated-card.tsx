@@ -38,7 +38,7 @@ export const AnimatedCard = ({
           style={{ backfaceVisibility: 'hidden', perspective: 1000 }}
         >
           <span className="font-semibold">
-            You finded the easteregg!
+            You found the easter egg!
             <br />
             <a
               className="underline text-lime-400"
