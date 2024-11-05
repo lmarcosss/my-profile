@@ -16,8 +16,6 @@ export function TypingAnimation({ text }: TypingAnimationProps) {
         setDisplayedText((prev) => prev + text.charAt(index))
 
         setIndex((prev) => prev + 1)
-      } else {
-        clearInterval(typingInterval)
       }
     }, typingSpeed)
 
