@@ -5,7 +5,6 @@ import { ModeToggle } from './components/mode-toggle'
 import { TypingAnimation } from './components/typing-animation'
 import { Header } from './components/header'
 import { AnimatedCard } from './components/animated-card'
-
 import {
   GitHubLogoIcon,
   InstagramLogoIcon,
@@ -13,6 +12,13 @@ import {
 } from '@radix-ui/react-icons'
 import { MailIcon } from 'lucide-react'
 import './App.css'
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+} from './components/ui/carousel'
+import { useEffect, useState } from 'react'
 
 const urls = [
   {
@@ -38,12 +44,24 @@ const urls = [
 ]
 
 export default function App() {
+  const [api, setApi] = useState<CarouselApi>()
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    api.on('select', () => {
+      // Do something on select.
+    })
+  }, [api])
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header />
 
-      <div className="w-full h-full flex justify-center items-center">
-        <div className="flex justify-center flex-wrap p-16">
+      <div className="w-full h-full flex flex-col justify-center items-center p-8 sm:gap-16">
+        <div className="flex justify-center flex-wrap">
           <div>
             <AnimatedCard>
               <motion.img
@@ -70,9 +88,39 @@ export default function App() {
             </div>
           </div>
 
-          <div className="h-[180px] flex items-center justify-center">
+          <div className="h-[180px] flex items-center justify-center flex-col">
             <TypingAnimation text="Hi, I'm Leo. I'm a software developer." />
           </div>
+        </div>
+
+        <div className="w-full flex flex-col">
+          <span className="sm:text-start text-center pb-4 sm:text-3xl text-xl font-bold">
+            Projects
+          </span>
+
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+            }}
+            className="w-full relative"
+            setApi={setApi}
+          >
+            <CarouselContent>
+              {Array.from({ length: 10 }).map((_, index) => (
+                <CarouselItem
+                  key={index}
+                  className="md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="flex aspect-square items-center justify-center p-6 bg-emerald-500">
+                    <span className="text-3xl font-semibold">
+                      {index + 1}
+                    </span>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
 
