@@ -20,6 +20,8 @@ import {
 } from './components/ui/carousel'
 import { useEffect, useState } from 'react'
 
+const isCarouselVisible = false
+
 const urls = [
   {
     url: 'https://github.com/lmarcosss',
@@ -60,11 +62,8 @@ export default function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header />
 
-      <div
-        className="w-full h-full flex flex-col justify-center items-center p-8 pt-0
-          sm:gap-16 flex-1 overflow-auto"
-      >
-        <div className="flex justify-center flex-wrap pt-8">
+      <div className="w-full h-full px-8 mb-16">
+        <div className="flex justify-center flex-wrap p-8 sm:gap-16">
           <div>
             <AnimatedCard>
               <motion.img
@@ -96,35 +95,37 @@ export default function App() {
           </div>
         </div>
 
-        {/* <div className="w-full flex flex-col">
-          <span className="sm:text-start text-center pb-4 sm:text-3xl text-xl font-bold">
-            Projects
-          </span>
+        {isCarouselVisible && (
+          <div className="w-full flex flex-col pb-8">
+            <span className="sm:text-start text-center pb-4 sm:text-3xl text-xl font-bold">
+              Projects
+            </span>
 
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: true,
-            }}
-            className="w-full relative"
-            setApi={setApi}
-          >
-            <CarouselContent>
-              {Array.from({ length: 10 }).map((_, index) => (
-                <CarouselItem
-                  key={index}
-                  className="md:basis-1/2 lg:basis-1/3"
-                >
-                  <div className="flex aspect-square items-center justify-center p-6 bg-emerald-500">
-                    <span className="text-3xl font-semibold">
-                      {index + 1}
-                    </span>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </div> */}
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="w-full relative"
+              setApi={setApi}
+            >
+              <CarouselContent>
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="md:basis-1/2 lg:basis-1/3"
+                  >
+                    <div className="flex aspect-square items-center justify-center p-6 bg-emerald-500">
+                      <span className="text-3xl font-semibold">
+                        {index + 1}
+                      </span>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
+        )}
       </div>
 
       <ModeToggle />
