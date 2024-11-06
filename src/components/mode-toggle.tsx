@@ -10,23 +10,27 @@ import {
 import { useTheme } from '../contexts/theme-provider'
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="fixed right-4 top-4 bg-yellow-300"
+          className={`fixed right-4 top-4
+            ${theme === 'light' ? 'bg-yellow-300' : 'border-gray-300'}
+            hover:border-none hover:ring-none hover:outline-none`}
           variant="outline"
           size="icon"
         >
           <Sun
+            fill={'yellow'}
             className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all
-              dark:-rotate-90 dark:scale-0 text-black"
+              dark:-rotate-90 dark:scale-0 text-yellow-700"
           />
           <Moon
+            fill={'yellow'}
             className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all
-              dark:rotate-0 dark:scale-100 text-black"
+              dark:rotate-0 dark:scale-100 text-yellow-900"
           />
           <span className="sr-only">Toggle theme</span>
         </Button>
