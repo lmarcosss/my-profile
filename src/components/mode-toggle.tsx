@@ -16,9 +16,8 @@ export function ModeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className={`fixed right-4 top-4
-            ${theme === 'light' ? 'bg-yellow-300' : 'border-gray-300'}
-            hover:border-none hover:ring-none hover:outline-none`}
+          className={`fixed right-4 top-4 ${theme === 'light' ? 'bg-yellow-300' : ''}
+            hover:border-none hover:ring-none hover:outline-none border-yellow-300`}
           variant="outline"
           size="icon"
         >
