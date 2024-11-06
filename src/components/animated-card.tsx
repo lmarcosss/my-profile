@@ -43,7 +43,7 @@ export const AnimatedCard = ({
             <a
               className="underline text-lime-400"
               target="_blank"
-              href="https://www.youtube.com/watch?v=oowBXzfcl90"
+              href="https://www.youtube.com/watch?v=YLy-X0QWuWA"
             >
               Follow my lead
             </a>
