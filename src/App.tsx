@@ -61,10 +61,10 @@ export default function App() {
       <Header />
 
       <div
-        className="w-full h-max flex flex-col justify-center items-center p-8 sm:gap-16
-          overflow-auto"
+        className="w-full h-full flex flex-col justify-center items-center p-8 pt-0
+          sm:gap-16 flex-1 overflow-auto"
       >
-        <div className="flex justify-center flex-wrap">
+        <div className="flex justify-center flex-wrap pt-8">
           <div>
             <AnimatedCard>
               <motion.img
@@ -96,7 +96,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="w-full flex flex-col">
+        {/* <div className="w-full flex flex-col">
           <span className="sm:text-start text-center pb-4 sm:text-3xl text-xl font-bold">
             Projects
           </span>
@@ -124,7 +124,7 @@ export default function App() {
               ))}
             </CarouselContent>
           </Carousel>
-        </div>
+        </div> */}
       </div>
 
       <ModeToggle />
