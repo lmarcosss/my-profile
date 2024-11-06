@@ -24,7 +24,7 @@ export function TypingAnimation({ text }: TypingAnimationProps) {
 
   return (
     <div className="w-72 h-32 flex items-center">
-      <span className="text-3xl font-bold text-center">
+      <span className="text-3xl font-bold text-center align-text-top">
         {displayedText}
         <motion.span
           animate={{ opacity: [0, 1] }}

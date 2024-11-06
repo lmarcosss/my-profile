@@ -66,8 +66,8 @@ export default function App() {
         className="w-full h-full px-8 mb-16 flex justify-center items-start
           sm:items-center"
       >
-        <div className="flex justify-center flex-wrap p-8 md:gap-16">
-          <div>
+        <div className="flex flex-col lg:gap-4">
+          <div className="flex flex-wrap justify-center items-center p-2 pt-8 sm:gap-8 md:gap-16">
             <AnimatedCard>
               <motion.img
                 initial={{ scale: 0 }}
@@ -84,17 +84,18 @@ export default function App() {
               />
             </AnimatedCard>
 
-            <div className="flex gap-8 pt-8 justify-center w-72">
-              {urls.map(({ url, icon: Icon, hover }) => (
-                <a key={url} href={url} target="_blank">
-                  <Icon className={`size-7 ${hover}`} />
-                </a>
-              ))}
-            </div>
+            <TypingAnimation text="Hi, I'm Leo. I'm a software developer." />
           </div>
 
-          <div className="h-[180px] flex items-center justify-center flex-col">
-            <TypingAnimation text="Hi, I'm Leo. I'm a software developer." />
+          <div
+            className="flex min-w-48 gap-8 pt-0 sm:pt-4 md:pt- items-center justify-center
+              sm:justify-start"
+          >
+            {urls.map(({ url, icon: Icon, hover }) => (
+              <a key={url} href={url} target="_blank">
+                <Icon className={`size-7 ${hover}`} />
+              </a>
+            ))}
           </div>
         </div>
 

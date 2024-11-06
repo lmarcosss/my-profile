@@ -30,7 +30,7 @@ export const AnimatedCard = ({
 
         <motion.div
           className={`absolute inset-0 flex items-center justify-center rounded-full
-            bg-slate-950 text-white ${flipped ? '' : 'rotate-y-180'} p-4 border-4
+            bg-black text-white ${flipped ? '' : 'rotate-y-180'} p-4 border-4
             border-transparent ring-yellow-300 ring-4 ring-none`}
           animate={{ rotateY: flipped ? 0 : -180 }}
           transition={{ duration: 0.6 }}
