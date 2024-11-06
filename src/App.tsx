@@ -62,8 +62,11 @@ export default function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header />
 
-      <div className="w-full h-full px-8 mb-16">
-        <div className="flex justify-center flex-wrap p-8 sm:gap-16">
+      <div
+        className="w-full h-full px-8 mb-16 flex justify-center items-start
+          sm:items-center"
+      >
+        <div className="flex justify-center flex-wrap p-8 md:gap-16">
           <div>
             <AnimatedCard>
               <motion.img
