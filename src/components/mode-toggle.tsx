@@ -17,15 +17,16 @@ export function ModeToggle() {
       <DropdownMenuTrigger asChild>
         <Button
           className={`fixed right-4 top-4
-            ${theme === 'light' ? 'bg-yellow-300 hover:bg-yellow-200' : 'shadow-yellow-300 shadow-md '}
-            hover:border-none hover:ring-none hover:outline-none`}
+            ${theme === 'light' ? 'bg-yellow-300 hover:bg-yellow-200 shadow-zinc-300' : 'shadow-yellow-300 '}
+            hover:border-none hover:ring-none hover:outline-none shadow-lg
+            focus:outline-none`}
           variant="outline"
           size="icon"
         >
           <Sun
             fill={'yellow'}
             className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all
-              dark:-rotate-90 dark:scale-0 text-yellow-700"
+              dark:-rotate-90 dark:scale-0 text-yellow-800"
           />
           <Moon
             fill={'yellow'}
