@@ -45,7 +45,7 @@ export const AnimatedCard = ({
               target="_blank"
               href="https://www.youtube.com/watch?v=YLy-X0QWuWA"
             >
-              Follow my lead
+              Enjoy it
             </a>
           </span>
         </motion.div>
