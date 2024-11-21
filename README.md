@@ -1,5 +1,7 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" align="center" width="30%">
+    <img src="https://github.com/user-attachments/assets/accf0539-52c9-42b1-a2b0-566d85e0b825" align="center">
+	
+
 </p>
 <p align="center"><h1 align="center">MY-PROFILE</h1></p>
 <p align="center">
