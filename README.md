@@ -3,7 +3,7 @@
 	
 
 </p>
-<p align="center"><h1 align="center">MY-PROFILE</h1></p>
+<p align="center"><h1 align="center">My profile</h1></p>
 <p align="center">
 	<em>Styling excellence, code consistency, user engagement.</em>
 </p>
