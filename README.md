@@ -359,7 +359,7 @@ Run the test suite using the following command:
 
 ## License
 
-This project is licensed under the MIT License. For more details, refer to the [LICENSE](./LICENSE) file.
+This project is licensed under the MIT License. For more details, refer to the [LICENSE](./LICENSE.txt) file.
 
 ---
 
