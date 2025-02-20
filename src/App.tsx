@@ -74,9 +74,9 @@ export default function App() {
                 transition={{
                   type: 'spring',
                 }}
-                alt="Profile image"
                 className="w-48 h-48 bg-[url(/src/assets/profile-image.jpeg)] bg-center bg-cover
-                  rounded-full border-4 border-transparent ring-emerald-500 ring-4"
+                  rounded-full border-4 dark:border-black border-white ring-emerald-500
+                  ring-4"
                 style={{
                   imageRendering: 'crisp-edges',
                 }}
