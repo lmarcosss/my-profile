@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import profileImage from './assets/profile-image.jpeg'
 import { ThemeProvider } from './contexts/theme-provider'
 import { ModeToggle } from './components/mode-toggle'
 import { TypingAnimation } from './components/typing-animation'
