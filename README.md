@@ -40,8 +40,6 @@
 
 ## Overview
 
-\*\*Overview:
-
 **my-profile** is a dynamic portfolio project that empowers software developers to showcase their skills, projects, and contact information with flair. Its interactive features include animated cards, theme toggles, and typing animations, enhancing user engagement. Tailored for developers seeking a visually appealing and interactive online presence, my-profile offers a seamless platform to highlight their work and connect with visitors.
 
 ---
