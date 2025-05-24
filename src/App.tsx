@@ -11,52 +11,35 @@ import {
 } from '@radix-ui/react-icons'
 import { MailIcon } from 'lucide-react'
 import './App.css'
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-} from './components/ui/carousel'
-import { useEffect, useState } from 'react'
-
-const isCarouselVisible = false
 
 const urls = [
   {
     url: 'https://github.com/lmarcosss',
     icon: GitHubLogoIcon,
     hover: 'hover:text-gray-400',
+    name: 'GitHub',
   },
   {
     url: 'https://www.linkedin.com/in/leo-marcos',
     icon: LinkedInLogoIcon,
     hover: 'hover:text-blue-400',
+    name: 'LinkedIn',
   },
   {
     url: 'https://www.instagram.com/leomarcoss',
     icon: InstagramLogoIcon,
     hover: 'hover:text-red-400',
+    name: 'Instagram',
   },
   {
     url: 'mailto: marcosleonardosss@gmail.com',
     icon: MailIcon,
     hover: 'hover:text-cyan-400',
+    name: 'Email',
   },
 ]
 
 export default function App() {
-  const [api, setApi] = useState<CarouselApi>()
-
-  useEffect(() => {
-    if (!api) {
-      return
-    }
-
-    api.on('select', () => {
-      // Do something on select.
-    })
-  }, [api])
-
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Header />
@@ -90,45 +73,18 @@ export default function App() {
             className="flex min-w-48 gap-8 pt-0 sm:pt-4 md:pt- items-center justify-center
               sm:justify-start"
           >
-            {urls.map(({ url, icon: Icon, hover }) => (
-              <a key={url} href={url} target="_blank">
+            {urls.map(({ url, icon: Icon, hover, name }) => (
+              <a
+                key={url}
+                href={url}
+                target="_blank"
+                data-umami-event={`${name} link clicked`}
+              >
                 <Icon className={`size-7 ${hover}`} />
               </a>
             ))}
           </div>
         </div>
-
-        {isCarouselVisible && (
-          <div className="w-full flex flex-col pb-8">
-            <span className="sm:text-start text-center pb-4 sm:text-3xl text-xl font-bold">
-              Projects
-            </span>
-
-            <Carousel
-              opts={{
-                align: 'start',
-                loop: true,
-              }}
-              className="w-full relative"
-              setApi={setApi}
-            >
-              <CarouselContent>
-                {Array.from({ length: 10 }).map((_, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="md:basis-1/2 lg:basis-1/3"
-                  >
-                    <div className="flex aspect-square items-center justify-center p-6 bg-emerald-500">
-                      <span className="text-3xl font-semibold">
-                        {index + 1}
-                      </span>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-          </div>
-        )}
       </div>
 
       <ModeToggle />
