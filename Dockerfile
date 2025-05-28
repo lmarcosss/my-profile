@@ -6,7 +6,7 @@ WORKDIR /app
 # Copia apenas os arquivos de dependência primeiro (melhor uso de cache)
 COPY package.json package-lock.json* ./
 
-RUN npm ci --omit=dev --ignore-scripts
+RUN npm ci
 
 COPY . .
 
