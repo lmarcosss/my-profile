@@ -21,9 +21,7 @@ WORKDIR /app
 # Copia apenas os arquivos essenciais do build
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
-
-# Reinstala apenas as dependências de produção
-RUN npm ci
+COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 4173
 
