@@ -1,23 +1,30 @@
-# Usa a versão mais recente do Node.js 20 como base
-FROM node:20-alpine
+# Etapa 1: Build
+FROM node:20-alpine AS builder
 
-# Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia os arquivos package.json e package-lock.json para um cache mais eficiente
+# Copia apenas os arquivos de dependência primeiro (melhor uso de cache)
 COPY package.json package-lock.json* ./
 
-# Instala as dependências
-RUN npm install --frozen-lockfile
+RUN npm ci --omit=dev --ignore-scripts
 
-# Copia o restante dos arquivos do projeto para dentro do container
 COPY . .
 
-# Faz o build da aplicação Vite
+# Faz o build da aplicação
 RUN npm run build
 
-# Expõe a porta padrão do Vite Preview (ou ajuste para a porta correta do seu projeto)
+# Etapa 2: Execução com imagem leve
+FROM node:20-alpine AS runner
+
+WORKDIR /app
+
+# Copia apenas os arquivos essenciais do build
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package.json ./package.json
+
+# Reinstala apenas as dependências de produção
+RUN npm install --omit=dev --ignore-scripts
+
 EXPOSE 4173
 
-# Comando para rodar a aplicação em produção
 CMD ["npm", "run", "preview"]
