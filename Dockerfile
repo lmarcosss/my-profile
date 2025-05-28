@@ -23,7 +23,7 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
 
 # Reinstala apenas as dependências de produção
-RUN npm install --omit=dev --ignore-scripts
+RUN npm ci
 
 EXPOSE 4173
 
