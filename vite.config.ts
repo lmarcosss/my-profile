@@ -13,6 +13,5 @@ export default defineConfig({
   preview: {
     host: true, // permite acesso externo
     port: 4173,
-    allowedHosts: ['devleo.tech'], // <- coloque aqui o domínio do seu servidor
   },
 })
