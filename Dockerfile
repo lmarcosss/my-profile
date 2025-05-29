@@ -23,9 +23,7 @@ WORKDIR /app
 # Só precisa do build e do Vite CLI para servir
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
-
-# Instala só o Vite CLI (leve)
-RUN npm install vite --omit=dev
+COPY --from=builder /app/node_modules ./node_modules
 
 EXPOSE 4173
 
