@@ -3,27 +3,31 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Copia apenas os arquivos de dependência primeiro (melhor uso de cache)
+# Copia arquivos de dependência
 COPY package.json package-lock.json* ./
 
+# Instala dependências com cache e segurança
 RUN npm ci
 
+# Copia todo o restante da aplicação
 COPY . .
 
-# Faz o build da aplicação
+# Gera o build da aplicação Vite
 RUN npm run build
 
-# Etapa 2: Execução com imagem leve
+# Etapa 2: Execução
 FROM node:20-alpine AS runner
 
 WORKDIR /app
 
+# Só precisa do build e do Vite CLI para servir
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
 
-# Instala somente o Vite CLI necessário para o preview
+# Instala só o Vite CLI (leve)
 RUN npm install vite --omit=dev
 
 EXPOSE 4173
 
+# Usa vite preview com host público
 CMD ["npx", "vite", "preview", "--port", "4173", "--host"]
