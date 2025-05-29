@@ -13,6 +13,6 @@ export default defineConfig({
   preview: {
     host: true, // permite acesso externo
     port: 4173,
-    allowedHosts: [process.env.ENDPOINT], // <- coloque aqui o domínio do seu servidor
+    allowedHosts: ['devleo.tech'], // <- coloque aqui o domínio do seu servidor
   },
 })
