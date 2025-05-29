@@ -10,4 +10,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  preview: {
+    host: true, // permite acesso externo
+    port: 4173,
+    allowedHosts: [process.env.ENDPOINT], // <- coloque aqui o domínio do seu servidor
+  },
 })
