@@ -21,8 +21,9 @@ WORKDIR /app
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
 
+# Instala somente o Vite CLI necessário para o preview
 RUN npm install vite --omit=dev
 
 EXPOSE 4173
 
-CMD ["npx", "vite", "preview"]
+CMD ["npx", "vite", "preview", "--port", "4173", "--host"]
