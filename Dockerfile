@@ -18,11 +18,11 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Copia apenas os arquivos essenciais do build
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/node_modules ./node_modules
+
+RUN npm install vite --omit=dev
 
 EXPOSE 4173
 
-CMD ["npm", "run", "preview"]
+CMD ["npx", "vite", "preview"]
