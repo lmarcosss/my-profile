@@ -46,7 +46,7 @@ const expertises = [
   {
     title: 'Full-Stack Development',
     description:
-      'Creating scalable web applications with modern technologies. Expert in React, React Native, Node.js, and SQL/NoSQL databases. Focus on clean architecture and performance optimization.',
+      'Creating scalable applications with modern technologies. Expert in React, React Native, Node.js, and SQL/NoSQL databases. Focus on clean architecture and performance optimization.',
     icon: CodeIcon,
   },
   {
@@ -58,7 +58,7 @@ const expertises = [
   {
     title: 'Solution Architecture',
     description:
-      'Architecting robust software solutions with focus on scalability, maintainability, and best practices. Experience in microservices, distributed systems, and technical leadership.',
+      'Architecting software solutions with focus on scalability, maintainability, and best practices. Experience in microservices, distributed systems.',
     icon: BlocksIcon,
   },
 ]
@@ -97,10 +97,10 @@ export default function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="h-screen overflow-y-auto flex flex-col justify-between">
-        <header className="pt-12 md:pt-20 pb-8">
+        <header className="pt-12 lg:pt-20 pb-8">
           <div className="container mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="mr-0 mb-8 md:mr-8 md:mb-0">
+            <div className="flex flex-col lg:flex-row items-center">
+              <div className="mr-0 mb-8 lg:mr-8 lg:mb-0">
                 <AnimatedCard>
                   <motion.img
                     initial={{ scale: 0 }}
@@ -117,25 +117,23 @@ export default function App() {
                   />
                 </AnimatedCard>
               </div>
-              <div className="text-center md:text-left">
-                <h1 className="text-3xl md:text-4xl font-bold mb-2">
+              <div className="text-center lg:text-left">
+                <h1 className="text-3xl lg:text-4xl font-bold mb-2">
                   Hi, I'm Leo. I'm a{' '}
                   <span className="text-emerald-500">
                     Software Developer.
                   </span>
                 </h1>
-                <p className="text-base md:text-lg text-gray-400 mb-6 max-w-xl">
+                <p className="text-base lg:text-lg text-gray-400 mb-6 max-w-xl text-justify">
                   I specialize in building exceptional digital
                   experiences. Continuous learning and agile
                   problem-solving are my approaches. I'm always open
                   to learning new technologies and eager to
-                  collaborate on innovative solutions. Connect with
-                  me, and together we will explore the world of
-                  technology!
+                  collaborate on innovative solutions.
                 </p>
                 <div
-                  className="flex min-w-48 gap-4 pt-0 sm:pt-4 md:pt- items-center justify-center
-                    sm:justify-start"
+                  className="flex min-w-48 gap-4 pt-0 sm:pt-4 items-center justify-center
+                    lg:justify-start"
                 >
                   {urls.map(({ url, icon: Icon, hover, name }) => (
                     <a
@@ -159,19 +157,19 @@ export default function App() {
         >
           <div className="border-t border-gray-800 mb-12 mx-6 md:mx-0" />
 
-          <h2 className="text-3xl font-bold mb-12 text-center md:text-left text-emerald-500">
+          <h2 className="text-3xl font-bold mb-12 text-center lg:text-left text-emerald-500">
             My Expertise
           </h2>
           <div className="container px-6 max-w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 flex-1">
               {expertises.map(
                 ({ title, description, icon: Icon }, index) => (
                   <div
                     key={index}
-                    className="flex flex-col items-center justify-center text-center md:text-justify
-                      flex-1 bg-neutral-900 p-6 rounded-lg shadow-lg transition-transform"
+                    className="flex flex-col items-center justify-around text-justify lg:text-justify
+                      flex-1 p-6 rounded-lg shadow-lg transition-transform"
                   >
-                    <span className="material-icons text-emerald-500 text-4xl mb-4">
+                    <span className="material-icons text-emerald-500 lg:text-4xl mb-4">
                       <Icon className="size-8" />
                     </span>
                     <h3 className="text-xl font-semibold mb-2">
