@@ -96,7 +96,7 @@ const articles = [
 export default function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="h-screen overflow-y-auto">
+      <div className="h-screen overflow-y-auto flex flex-col justify-between">
         <header className="pt-12 md:pt-20 pb-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center">
