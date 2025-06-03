@@ -126,9 +126,12 @@ export default function App() {
                 </h1>
                 <p className="text-base md:text-lg text-gray-400 mb-6 max-w-xl">
                   I specialize in building exceptional digital
-                  experiences. With a passion for clean code and
-                  user-centric design, I transform ideas into powerful
-                  and scalable software solutions.
+                  experiences. Continuous learning and agile
+                  problem-solving are my approaches. I'm always open
+                  to learning new technologies and eager to
+                  collaborate on innovative solutions. Connect with
+                  me, and together we will explore the world of
+                  technology!
                 </p>
                 <div
                   className="flex min-w-48 gap-4 pt-0 sm:pt-4 md:pt- items-center justify-center
