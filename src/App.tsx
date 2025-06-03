@@ -236,7 +236,10 @@ export default function App() {
           </section>
         )}
         <footer className="px-0 md:px-12 mt-8">
-          <div className="border-t border-gray-800 mx-6 py-8 md:mx-0 flex items-center">
+          <div
+            className="border-t border-gray-800 mx-6 py-8 md:mx-0 flex items-center
+              justify-center"
+          >
             <span className="container mx-auto px-6 text-center text-gray-500 text-sm">
               © 2024 Leonardo Marcos. All rights reserved.
             </span>
