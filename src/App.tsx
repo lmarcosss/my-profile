@@ -154,7 +154,7 @@ export default function App() {
         </header>
 
         <section
-          className="py-8 mx-0 md:mx-12 md:py-12"
+          className="py-8 mx-0 md:mx-12 md:py-12 flex-1"
           id="expertise"
         >
           <div className="border-t border-gray-800 mb-12 mx-6 md:mx-0" />
