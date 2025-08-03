@@ -43,10 +43,11 @@ export default function App() {
 
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="h-screen overflow-y-auto flex flex-col justify-between">
-        <header className="flex justify-end">
-          <NavigationMenuDemo />
-        </header>
+      <div
+        className="min-h-[100dvh] h-[100dvh] overflow-y-auto flex flex-col
+          justify-between"
+      >
+        <NavigationMenuDemo />
 
         <div className="pt-12 lg:pt-20 pb-8">
           <div className="container mx-auto px-6">
@@ -98,7 +99,7 @@ export default function App() {
           </div>
         </div>
 
-        <footer className="py-8 lg:py-4">
+        <footer className="pb-8 lg:pb-4">
           <span className="text-center text-gray-500 text-sm">
             {t('copyrights')}
           </span>
