@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 export const AnimatedCard = ({
   children,
@@ -7,6 +8,7 @@ export const AnimatedCard = ({
   children: JSX.Element
 }) => {
   const [flipped, setFlipped] = useState(false)
+  const { t } = useTranslation()
 
   const onToggleFlip = () => {
     setFlipped(!flipped)
@@ -38,14 +40,14 @@ export const AnimatedCard = ({
           style={{ backfaceVisibility: 'hidden', perspective: 1000 }}
         >
           <span className="font-semibold">
-            You found the easter egg!
+            {t('easteregg-pt1')}
             <br />
             <a
               className="underline text-yellow-300"
               target="_blank"
               href="https://www.youtube.com/watch?v=YLy-X0QWuWA"
             >
-              Enjoy it
+              {t('easteregg-pt2')}
             </a>
           </span>
         </motion.div>
