@@ -15,6 +15,8 @@ const resources = {
       copyrights: '© 2024 Leonardo Marcos. All rights reserved.',
       'easteregg-pt1': 'You found the easter egg!',
       'easteregg-pt2': 'Enjoy it',
+      'profile-image-alt': 'Profile image of Leo',
+      'url-link-aria-label': 'Link to',
     },
   },
 
@@ -32,6 +34,8 @@ const resources = {
         '© 2024 Leonardo Marcos. Todos os direitos reservados.',
       'easteregg-pt1': 'Você encontrou o segredo escondido!',
       'easteregg-pt2': 'Aproveite-o',
+      'profile-image-alt': 'Imagem de perfil do Leo',
+      'url-link-aria-label': 'Link para',
     },
   },
 }
