@@ -50,7 +50,7 @@ export function Presentation() {
                 transition={{
                   type: 'spring',
                 }}
-                alt={t('profile-image-alt')}
+                aria-label={t('profile-image-alt')}
                 className="w-48 h-48 bg-[url(/src/assets/profile-image.webp)] bg-center bg-cover
                   rounded-full border-4 dark:border-black border-white ring-emerald-500
                   ring-4"
