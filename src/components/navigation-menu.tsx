@@ -1,5 +1,5 @@
 import {
-  NavigationMenu,
+  NavigationMenu as NavigationMenuComponent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -31,13 +31,13 @@ enum LanguagesEnum {
 
 type Language = LanguagesEnum
 
-export function NavigationMenuDemo() {
+export function NavigationMenu() {
   const { setTheme, theme } = useTheme()
   const { i18n } = useTranslation()
 
   return (
     <header className="flex justify-end pr-2">
-      <NavigationMenu>
+      <NavigationMenuComponent>
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuLink
@@ -93,7 +93,7 @@ export function NavigationMenuDemo() {
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenuComponent>
     </header>
   )
 }
