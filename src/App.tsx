@@ -99,7 +99,7 @@ export default function App() {
           </div>
         </div>
 
-        <footer className="pb-8 lg:pb-4">
+        <footer className="pb-6 lg:pb-4">
           <span className="text-center text-gray-500 text-sm">
             {t('copyrights')}
           </span>
