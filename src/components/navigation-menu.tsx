@@ -33,7 +33,7 @@ type Language = LanguagesEnum
 
 export function NavigationMenu() {
   const { setTheme, theme } = useTheme()
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   return (
     <header className="flex justify-end pr-2">
@@ -44,16 +44,18 @@ export function NavigationMenu() {
               target="_blank"
               href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
               className={navigationMenuTriggerStyle()}
+              aria-label={t('curriculum-vitae-navigation')}
             >
               CV
             </NavigationMenuLink>
           </NavigationMenuItem>
-          <NavigationMenuItem asChild>
+          <NavigationMenuItem>
             <button
               onClick={() =>
                 setTheme(theme === 'light' ? 'dark' : 'light')
               }
               className={`cursor-pointer ${navigationMenuTriggerStyle()}`}
+              aria-label={`${t('theme-switcher')} ${t(theme === 'light' ? 'current-dark-mode' : 'current-light-mode')}`}
             >
               {theme === 'light' ? (
                 <Sun
@@ -70,7 +72,7 @@ export function NavigationMenu() {
               )}
             </button>
           </NavigationMenuItem>
-          <NavigationMenuItem asChild>
+          <NavigationMenuItem>
             <button
               className={`cursor-pointer ${navigationMenuTriggerStyle()}`}
               onClick={() => {
@@ -80,6 +82,7 @@ export function NavigationMenu() {
                     : LanguagesEnum.PORTUGUESE
                 )
               }}
+              aria-label={`${t('language-switcher')} ${t('language-switcher-current')} ${languages[i18n.language as Language].name}`}
             >
               <div className="flex items-center gap-2">
                 <img

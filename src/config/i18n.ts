@@ -17,6 +17,13 @@ const resources = {
       'easteregg-pt2': 'Enjoy it',
       'profile-image-alt': 'Profile image of Leo',
       'url-link-aria-label': 'Link to',
+      'language-switcher': 'Switch Language',
+      'theme-switcher': 'Switch Theme',
+      'curriculum-vitae-navigation':
+        'Curriculum Vitae Navigation Link',
+      'current-dark-mode': 'Current theme: dark',
+      'current-light-mode': 'Current theme: light',
+      'language-switcher-current': 'Current Language',
     },
   },
 
@@ -36,6 +43,13 @@ const resources = {
       'easteregg-pt2': 'Aproveite-o',
       'profile-image-alt': 'Imagem de perfil do Leo',
       'url-link-aria-label': 'Link para',
+      'language-switcher': 'Mudar idioma',
+      'theme-switcher': 'Mudar tema',
+      'curriculum-vitae-navigation':
+        'Link de navegação para o currículo',
+      'current-dark-mode': 'Tema atual: escuro',
+      'current-light-mode': 'Tema atual: claro',
+      'language-switcher-current': 'Idioma atual',
     },
   },
 }
