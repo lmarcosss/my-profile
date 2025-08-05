@@ -48,8 +48,8 @@ export function NavigationMenu() {
               CV
             </NavigationMenuLink>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
+          <NavigationMenuItem asChild>
+            <button
               onClick={() =>
                 setTheme(theme === 'light' ? 'dark' : 'light')
               }
@@ -68,10 +68,10 @@ export function NavigationMenu() {
                   className="text-yellow-400"
                 />
               )}
-            </NavigationMenuLink>
+            </button>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
+          <NavigationMenuItem asChild>
+            <button
               className={`cursor-pointer ${navigationMenuTriggerStyle()}`}
               onClick={() => {
                 i18n.changeLanguage(
@@ -90,7 +90,7 @@ export function NavigationMenu() {
                 />
                 {i18n.language}
               </div>
-            </NavigationMenuLink>
+            </button>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenuComponent>
