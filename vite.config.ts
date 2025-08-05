@@ -10,4 +10,26 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          layout: [
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-icons',
+            '@radix-ui/react-navigation-menu',
+            '@radix-ui/react-slot',
+            'class-variance-authority',
+            'clsx',
+            'embla-carousel-react',
+            'framer-motion',
+            'tailwind-merge',
+            'tailwindcss-animate',
+          ],
+          internationalization: ['i18next', 'react-i18next'],
+        },
+      },
+    },
+  },
 })
