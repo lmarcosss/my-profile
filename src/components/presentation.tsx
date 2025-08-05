@@ -8,6 +8,8 @@ import {
   LinkedInLogoIcon,
 } from '@radix-ui/react-icons'
 
+import profileImage from '../assets/profile-image.webp'
+
 const urls = [
   {
     url: 'https://github.com/lmarcosss',
@@ -50,9 +52,11 @@ export function Presentation() {
                 transition={{
                   type: 'spring',
                 }}
-                className="w-48 h-48 bg-[url(/src/assets/profile-image.webp)] bg-center bg-cover
-                  rounded-full border-4 dark:border-black border-white ring-emerald-500
-                  ring-4"
+                src={profileImage}
+                alt={t('profile-image-alt')}
+                className="bg-[url(/src/assets/profile-image.webp)] rounded-full border-4 w-48
+                  h-48 object-cover aspect-auto dark:border-black border-white
+                  ring-emerald-500 ring-4"
                 style={{
                   imageRendering: 'crisp-edges',
                 }}
