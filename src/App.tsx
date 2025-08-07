@@ -17,8 +17,6 @@ export default function App() {
 
         <Presentation />
 
-        <span> Rebeca was here</span>
-
         <footer className="pb-6 lg:pb-4">
           <span className="text-center text-gray-400 text-sm">
             {t('copyrights')}
