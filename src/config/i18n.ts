@@ -27,6 +27,7 @@ const resources = {
       'current-light-mode': 'Current theme: light',
       'language-switcher-current': 'Current Language',
       projects: '🎯 Projects',
+      'see-code': 'See code',
     },
   },
 
@@ -54,6 +55,7 @@ const resources = {
       'current-light-mode': 'Tema atual: claro',
       'language-switcher-current': 'Idioma atual',
       projects: '🎯 Projetos',
+      'see-code': 'Ver código',
     },
   },
 }
