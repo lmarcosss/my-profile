@@ -60,11 +60,11 @@ export default function App() {
             className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-10 justify-center
               items-center w-full py-6 px-0 lg:px-8"
           >
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <div
                 key={project.title}
-                className="flex flex-col justify-between items-center sm:w-full rounded-lg
-                  h-[32rem] bg-emerald-600"
+                className={`flex flex-col justify-between items-center sm:w-full rounded-lg
+                h-[32rem] ${index % 2 === 0 ? 'bg-emerald-600' : 'bg-yellow-500'}`}
               >
                 <div className="flex-1 flex justify-center items-center">
                   <img
