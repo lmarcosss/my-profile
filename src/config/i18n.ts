@@ -34,7 +34,7 @@ const resources = {
     translation: {
       'welcome-react': 'Bem-vindo ao React e react-i18next',
       'title-pt1': 'Oi, sou o Leo e sou ',
-      'title-pt2': 'Desenvolvedor de Software',
+      'title-pt2': 'Desenvolvedor de Software.',
       description: `Sou um engenheiro de software com mais de 6 anos de experiência
                   projetando e construindo soluções eficientes e centradas no usuário
                   para web e mobile. Gosto de enfrentar
