@@ -5,6 +5,7 @@ import { Presentation } from './components/presentation'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import filmeFlixImage from './assets/projects/movie.png'
 import pokemonEvolutionImage from './assets/projects/pokemon.png'
+import { Language } from './config/i18n'
 import './App.css'
 
 const projects = [
@@ -80,11 +81,7 @@ export default function App() {
                     {project.title}
                   </h3>
                   <p className="dark:text-black text-white">
-                    {
-                      project.description[
-                        i18n.language as 'en-US' | 'pt-BR'
-                      ]
-                    }
+                    {project.description[i18n.language as Language]}
                   </p>
 
                   <a

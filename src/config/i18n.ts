@@ -1,6 +1,8 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
+export type Language = 'en-US' | 'pt-BR'
+
 const resources = {
   'en-US': {
     translation: {
