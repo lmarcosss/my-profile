@@ -4,6 +4,7 @@ import { Presentation } from './components/presentation'
 import { Projects } from './components/projects'
 
 import './App.css'
+import { Footer } from './components/footer'
 
 export default function App() {
   return (
@@ -17,6 +18,8 @@ export default function App() {
         <Presentation />
 
         <Projects />
+
+        <Footer />
       </div>
     </ThemeProvider>
   )
