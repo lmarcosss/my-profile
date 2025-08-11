@@ -43,8 +43,8 @@ export function Presentation() {
   return (
     <div className="pt-12 lg:pt-20 pb-8">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="mr-0 mb-8 lg:mr-8 lg:mb-0">
+        <div className="flex flex-col lg:flex-row">
+          <div className="mr-0 mb-8 lg:mr-8 lg:mb-0 lg:mt-4">
             <AnimatedCard>
               <motion.img
                 initial={{ scale: 0 }}
@@ -56,7 +56,7 @@ export function Presentation() {
                 alt={t('profile-image-alt')}
                 className="bg-[url(/src/assets/profile-image.webp)] rounded-full border-4 w-48
                   h-48 object-cover aspect-auto dark:border-black border-white
-                  ring-emerald-500 ring-4"
+                  ring-emerald-600 ring-4"
                 style={{
                   imageRendering: 'crisp-edges',
                 }}
@@ -66,11 +66,14 @@ export function Presentation() {
           <div className="text-center lg:text-left">
             <h1 className="text-3xl lg:text-4xl font-bold mb-2">
               {t('title-pt1')} <br />
-              <span className="text-emerald-500">
+              <span className="text-emerald-600">
                 {t('title-pt2')}
               </span>
             </h1>
-            <p className="text-base lg:text-lg text-gray-400 mb-6 max-w-xl text-justify">
+            <p
+              className="text-base lg:text-lg text-gray-400 mb-2 max-w-xl text-justify
+                lg:h-[140px]"
+            >
               {t('description')}
             </p>
             <div
