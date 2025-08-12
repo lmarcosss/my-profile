@@ -56,7 +56,7 @@ export function Presentation() {
                 alt={t('profile-image-alt')}
                 className="bg-[url(/src/assets/profile-image.webp)] rounded-full border-4 w-48
                   h-48 object-cover aspect-auto dark:border-black border-white
-                  ring-emerald-600 ring-4"
+                  ring-emerald-500 ring-4"
                 style={{
                   imageRendering: 'crisp-edges',
                 }}
@@ -66,7 +66,7 @@ export function Presentation() {
           <div className="text-center lg:text-left">
             <h1 className="text-3xl lg:text-4xl font-bold mb-2">
               {t('title-pt1')} <br />
-              <span className="text-emerald-600">
+              <span className="text-emerald-500">
                 {t('title-pt2')}
               </span>
             </h1>
