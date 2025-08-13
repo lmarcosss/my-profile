@@ -28,7 +28,7 @@ function Project({ project }: ProjectProps) {
     <div
       key={project.title}
       className={`flex flex-col justify-between items-center sm:w-full rounded-lg
-        h-[32rem] ${project.backgroundColor || 'bg-slate-200'}`}
+        h-[33rem] ${project.backgroundColor || 'bg-slate-200'}`}
     >
       <div className="flex-1 flex justify-center items-center">
         <img

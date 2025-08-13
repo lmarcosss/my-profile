@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import filmeFlixImage from '../assets/projects/movie.webp'
+import filmeFlixImage from '../assets/projects/movie.png'
 import pokemonEvolutionImage from '../assets/projects/pokemon.png'
 import { lazy, Suspense } from 'react'
 import { Skeleton } from './ui/skeleton'
@@ -16,8 +16,7 @@ const projects = [
     image: {
       source: filmeFlixImage,
       alt: 'Filme flix project screenshot',
-      className:
-        'w-40 h-[20rem] bg-black my-6 border-4 border-black rounded-3xl',
+      className: 'w-80 my-6',
     },
     githubUrl: 'https://github.com/lmarcosss/filme-flix',
     backgroundColor: 'bg-emerald-600',
@@ -31,7 +30,7 @@ const projects = [
     image: {
       source: pokemonEvolutionImage,
       alt: 'Pokemon Evolution project screenshot',
-      className: `w-[18rem] sm:w-[15rem] md:w-[21rem] lg:w-[23rem] rounded-xl bg-[url(${pokemonEvolutionImage})]`,
+      className: `w-max rounded-xl bg-[url(${pokemonEvolutionImage})]`,
     },
     githubUrl: 'https://github.com/lmarcosss/pokemon-evolution',
     backgroundColor: 'bg-[#2a75bb]',
