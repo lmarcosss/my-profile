@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import filmeFlixImage from '../assets/projects/movie.webp'
-import pokemonEvolutionImage from '../assets/projects/pokemon.webp'
+import pokemonEvolutionImage from '../assets/projects/pokemon.png'
 import { lazy, Suspense } from 'react'
 import { Skeleton } from './ui/skeleton'
 
@@ -31,11 +31,10 @@ const projects = [
     image: {
       source: pokemonEvolutionImage,
       alt: 'Pokemon Evolution project screenshot',
-      className:
-        'w-[18rem] sm:w-[15rem] md:w-[21rem] lg:w-[24rem] my-6 rounded-xl',
+      className: `w-[18rem] sm:w-[15rem] md:w-[21rem] lg:w-[23rem] rounded-xl bg-[url(${pokemonEvolutionImage})]`,
     },
     githubUrl: 'https://github.com/lmarcosss/pokemon-evolution',
-    backgroundColor: 'bg-yellow-500',
+    backgroundColor: 'bg-[#2a75bb]',
   },
 ]
 

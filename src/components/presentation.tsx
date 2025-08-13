@@ -71,7 +71,7 @@ export function Presentation() {
               </span>
             </h1>
             <p
-              className="text-base lg:text-lg text-gray-400 mb-2 max-w-xl text-justify
+              className="text-base lg:text-lg text-gray-400 sm:mb-4 mb-2 max-w-xl text-justify
                 lg:h-[140px]"
             >
               {t('description')}
