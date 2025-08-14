@@ -33,7 +33,7 @@ const projects = [
       className: `w-max rounded-xl bg-[url(${pokemonEvolutionImage})]`,
     },
     githubUrl: 'https://github.com/lmarcosss/pokemon-evolution',
-    backgroundColor: 'bg-[#2a75bb]',
+    backgroundColor: 'bg-sky-600',
   },
 ]
 
@@ -41,7 +41,7 @@ export function Projects() {
   const { t } = useTranslation()
 
   return (
-    <div className="flex flex-col items-start px-6">
+    <div className="flex flex-col items-start px-6 pt-16">
       <h2 className="text-3xl font-semibold lg:px-8">
         {t('projects')}
       </h2>
