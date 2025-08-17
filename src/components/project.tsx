@@ -1,6 +1,7 @@
 import { Language } from '@/config/i18n'
 import { GitHubLogoIcon } from '@radix-ui/react-icons'
 import { useTranslation } from 'react-i18next'
+import { LinkPreview } from './link-preview'
 
 interface Project {
   title: string
@@ -31,18 +32,14 @@ function Project({ project }: ProjectProps) {
       className={`flex flex-col justify-between items-center sm:w-full rounded-lg
         h-[33rem] ${project.backgroundColor || 'bg-slate-200'}`}
     >
-      <a
-        href={project?.previewUrl}
-        target="_blank"
-        className="flex-1 flex justify-center items-center"
-      >
+      <LinkPreview href={project?.previewUrl}>
         <img
           src={project.image.source}
           className={project.image.className}
           alt={project.image.alt}
           loading="lazy"
         />
-      </a>
+      </LinkPreview>
       <div
         className="flex flex-col items-start w-full justify-start text-left p-4
           rounded-b-lg"

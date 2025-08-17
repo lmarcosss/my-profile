@@ -42,6 +42,7 @@ export function NavigationMenu() {
           <NavigationMenuItem>
             <NavigationMenuLink
               target="_blank"
+              rel="noopener noreferrer"
               href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
               className={navigationMenuTriggerStyle()}
               aria-label={t('curriculum-vitae-navigation')}

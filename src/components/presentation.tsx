@@ -85,6 +85,7 @@ export function Presentation() {
                   key={url}
                   href={url}
                   target="_blank"
+                  rel="noopener noreferrer"
                   data-umami-event={`${name} link clicked`}
                   aria-label={`${t('url-link-aria-label')} ${name}`}
                 >

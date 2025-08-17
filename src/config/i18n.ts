@@ -28,6 +28,7 @@ const resources = {
       'language-switcher-current': 'Current Language',
       projects: 'Projects',
       'see-code': 'See code',
+      'see-preview': 'See preview',
     },
   },
 
@@ -56,6 +57,7 @@ const resources = {
       'language-switcher-current': 'Idioma atual',
       projects: 'Projetos',
       'see-code': 'Ver código',
+      'see-preview': 'Ver prévia',
     },
   },
 }
