@@ -13,6 +13,7 @@ interface Project {
     alt: string
     className: string
   }
+  previewUrl?: string
   githubUrl: string
   backgroundColor: string
 }
@@ -30,14 +31,18 @@ function Project({ project }: ProjectProps) {
       className={`flex flex-col justify-between items-center sm:w-full rounded-lg
         h-[33rem] ${project.backgroundColor || 'bg-slate-200'}`}
     >
-      <div className="flex-1 flex justify-center items-center">
+      <a
+        href={project?.previewUrl}
+        target="_blank"
+        className="flex-1 flex justify-center items-center"
+      >
         <img
           src={project.image.source}
           className={project.image.className}
           alt={project.image.alt}
           loading="lazy"
         />
-      </div>
+      </a>
       <div
         className="flex flex-col items-start w-full justify-start text-left p-4
           rounded-b-lg"

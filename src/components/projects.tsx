@@ -32,6 +32,7 @@ const projects = [
       alt: 'Pokemon Evolution project screenshot',
       className: `w-max rounded-xl bg-[url(${pokemonEvolutionImage})]`,
     },
+    previewUrl: 'https://pokemon-evolution.devleo.tech',
     githubUrl: 'https://github.com/lmarcosss/pokemon-evolution',
     backgroundColor: 'bg-sky-600',
   },
