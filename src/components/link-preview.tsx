@@ -22,7 +22,7 @@ export function LinkPreview({
       {href && (
         <div
           className="bg-gray-700/40 w-32 h-32 rounded-md flex items-center justify-center
-            flex-col absolute text-gray-200 opacity-0 hover:opacity-100
+            flex-col absolute text-slate-300 opacity-0 hover:opacity-100
             transition-opacity duration-500"
         >
           <EyeOpenIcon className="size-20 font-medium" />
