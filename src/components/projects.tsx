@@ -43,8 +43,7 @@ export function Projects() {
     const { t } = useTranslation()
 
     return (
-        <div className="flex flex-col items-start px-6 pt-16 relative">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-emerald-500/5 via-green-500/5 to-teal-500/5 rounded-3xl -z-10" />
+        <section className="flex flex-col items-start px-6 pt-16 mb-4 pb-8 relative">
 
             <motion.div
                 className="relative z-10 mb-12"
@@ -52,10 +51,10 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
             >
-                <h2 className="text-4xl font-bold text-white lg:px-8 mb-2">
+                <h2 className="text-4xl font-bold text-gray-900 dark:text-white lg:px-8 mb-2">
                     {t('projects')}
                 </h2>
-                <div className="w-20 h-1 bg-white rounded-full lg:ml-8" />
+                <div className="w-20 h-1 bg-emerald-600 rounded-full lg:ml-8" />
             </motion.div>
 
             <div className="w-full lg:px-8">
@@ -75,6 +74,6 @@ export function Projects() {
                     </Suspense>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }

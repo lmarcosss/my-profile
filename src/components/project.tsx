@@ -26,7 +26,7 @@ export function Project({ project, index }: { project: Project; index: number })
 
   return (
     <motion.div
-      className="group relative w-full h-min-[300px] cursor-pointer pb-8"
+      className="group relative w-full h-min-[300px] cursor-pointer"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{
