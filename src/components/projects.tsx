@@ -15,7 +15,7 @@ const projects = [
         image: {
             source: filmeFlixImage,
             alt: 'Filme flix project screenshot',
-            className: 'w-fit h-[350px] object-cover pt-16',
+            className: 'w-fit h-[300px] object-cover pt-16',
         },
         githubUrl: 'https://github.com/lmarcosss/filme-flix',
         backgroundColor: 'bg-emerald-600',
