@@ -6,7 +6,7 @@ import { useTheme } from '@/contexts/theme-provider'
 import { Moon, Sun, FileText, Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const languages = {
   'pt-BR': {
@@ -32,6 +32,7 @@ export function NavigationMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const headerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,8 +56,25 @@ export function NavigationMenu() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY])
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    if (isMobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMobileMenuOpen])
+
   return (
     <motion.header
+      ref={headerRef}
       className="fixed top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200/20 dark:border-gray-700/20"
       initial={{ y: -100 }}
       animate={{
