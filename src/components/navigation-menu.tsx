@@ -109,7 +109,7 @@ export function NavigationMenu() {
               aria-label={t('curriculum-vitae-navigation')}
             >
               <FileText className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="font-medium">Ver CV</span>
+              <span className="font-medium">{t('see-cv')}</span>
             </motion.a>
 
             <motion.button

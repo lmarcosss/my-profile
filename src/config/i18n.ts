@@ -29,6 +29,7 @@ const resources = {
       projects: 'Projects',
       'see-code': 'See code',
       'see-preview': 'Go to website',
+      'see-cv': 'See CV',
     },
   },
 
@@ -58,6 +59,7 @@ const resources = {
       projects: 'Projetos',
       'see-code': 'Ver código',
       'see-preview': 'Ir para o site',
+      'see-cv': 'Ver CV',
     },
   },
 }
