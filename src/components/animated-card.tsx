@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
 export const AnimatedCard = ({
@@ -15,20 +16,28 @@ export const AnimatedCard = ({
 
   return (
     <div className="flex items-center justify-center flex-row">
-      <div
+      <motion.div
         className="relative w-48 h-48 cursor-pointer"
         onClick={onToggleFlip}
+        style={{ perspective: 1000 }}
       >
-        <div
-          className={`absolute inset-0 flex items-center justify-center ${flipped ? 'hidden' : ''}`}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
+          animate={{ rotateY: flipped ? 180 : 0 }}
+          transition={{ duration: 0.6 }}
+          style={{ backfaceVisibility: 'hidden' }}
         >
           {children}
-        </div>
+        </motion.div>
 
-        <div
-          className={`absolute inset-0 flex items-center justify-center rounded-full bg-black text-white p-4 ${flipped ? '' : 'hidden'}`}
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center rounded-full bg-black text-white p-4 border border-yellow-300 ring ring-yellow-300 w-48 h-48"
+          animate={{ rotateY: flipped ? 0 : -180 }}
+          transition={{ duration: 0.6 }}
+          initial={false}
+          style={{ backfaceVisibility: 'hidden' }}
         >
-          <span className="font-semibold text-sm text-center">
+          <span className="font-semibold text-xs text-center">
             {t('easteregg-pt1')}
             <br />
             <a
@@ -40,8 +49,8 @@ export const AnimatedCard = ({
               {t('easteregg-pt2')}
             </a>
           </span>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   )
 }
