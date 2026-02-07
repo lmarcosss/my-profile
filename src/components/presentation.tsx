@@ -40,9 +40,9 @@ export function Presentation() {
   return (
     <section className="pt-12 lg:pt-20 pb-8">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start">
+        <div className="flex flex-col md:flex-row items-center md:items-start">
           {/* Profile Image Section */}
-          <div className="mr-0 mb-8 lg:mr-12 lg:mb-0 lg:mt-4">
+          <div className="mr-0 mb-8 md:mr-12 md:mb-0">
             <div className="relative">
               <AnimatedCard>
                 <img
@@ -55,19 +55,19 @@ export function Presentation() {
           </div>
 
           {/* Content Section */}
-          <div className="text-center lg:text-left min-h-[400px] flex flex-col justify-center">
+          <div className="text-center md:text-left min-h-[400px] flex flex-col w-full md:max-w-2xl">
             {/* Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white text-center lg:text-left min-h-[120px] flex items-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center md:text-left flex items-start justify-center md:justify-start mb-3">
               <span>{t('title-pt1')} <span className="text-gray-700 dark:text-green-500">{t('title-pt2')}</span></span>
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-6 max-w-2xl text-center sm:text-justify lg:text-left min-h-[80px]">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-6 w-full text-center md:text-left">
               {t('description')}
             </p>
 
             {/* Social Links */}
-            <div className="flex flex-wrap gap-4 pt-2 items-center justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-4 pt-2 items-center justify-center md:justify-start">
               {urls.map(({ url, icon: Icon, name }) => (
                 <a
                   key={url}
@@ -76,7 +76,7 @@ export function Presentation() {
                   rel="noopener noreferrer"
                   data-umami-event={`${name} link clicked`}
                   aria-label={`${t('url-link-aria-label')} ${name}`}
-                  className="group p-3 rounded border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-gray-900 dark:hover:border-green-500 transition-colors"
+                  className="group p-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-gray-900 hover:border-green-500 dark:hover:border-green-500 transition-colors"
                 >
                   <Icon className="size-5 text-gray-700 dark:text-gray-300 group-hover:text-green-500 dark:group-hover:text-green-500 transition-colors" />
                 </a>

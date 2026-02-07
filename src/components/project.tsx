@@ -62,7 +62,7 @@ export function Project({ project }: { project: Project }) {
           {/* Action buttons */}
           <div className="flex gap-3 mt-6">
             <a
-              className="flex-1 border border-gray-300 dark:border-gray-800 dark:hover:border-green-500/50 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] dark:hover:text-green-500 transition-colors text-sm"
+              className="flex-1 border border-gray-300 dark:border-gray-800 dark:hover:border-green-500/50 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +73,7 @@ export function Project({ project }: { project: Project }) {
 
             {project.previewUrl && (
               <a
-                className="border border-gray-300 dark:border-gray-800 dark:hover:border-green-500/50 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] dark:hover:text-green-500 transition-colors text-sm"
+                className="flex-1 border border-gray-300 dark:border-gray-800 dark:hover:border-green-500/50 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
                 href={project.previewUrl}
                 target="_blank"
                 rel="noopener noreferrer"

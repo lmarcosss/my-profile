@@ -56,7 +56,7 @@ export function NavigationMenu() {
         <div className="flex items-center justify-between w-full">
           {/* Logo/Brand */}
           <div className="text-2xl font-bold text-gray-900 dark:text-green-500">
-            LM
+            Leo.
           </div>
 
           {/* Desktop Navigation */}
