@@ -30,6 +30,8 @@ const resources = {
       'see-code': 'See code',
       'see-preview': 'Go to website',
       'see-cv': 'See CV',
+      'dark-mode': 'Dark Mode',
+      'light-mode': 'Light Mode',
     },
   },
 
@@ -60,6 +62,8 @@ const resources = {
       'see-code': 'Ver código',
       'see-preview': 'Ir para o site',
       'see-cv': 'Ver CV',
+      'dark-mode': 'Tema escuro',
+      'light-mode': 'Tema claro',
     },
   },
 }

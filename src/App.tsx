@@ -9,7 +9,7 @@ import { Footer } from './components/footer'
 export default function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-emerald-500/5 dark:via-green-500/5 dark:to-teal-500/5">
+      <div className="min-h-screen bg-white dark:bg-[#0a0a0a]">
         <NavigationMenu />
         <div className="pt-20">
           <Presentation />

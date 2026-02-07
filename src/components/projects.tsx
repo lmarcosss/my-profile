@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 import filmeFlixImage from '../assets/projects/movie.png'
 import pokemonEvolutionImage from '../assets/projects/pokemon.png'
 import { Suspense } from 'react'
-import { motion } from 'framer-motion'
 import { Project } from './project'
 
 const projects = [
@@ -45,17 +44,12 @@ export function Projects() {
     return (
         <section className="flex flex-col items-start px-6 pt-16 mb-4 pb-8 relative">
 
-            <motion.div
-                className="relative z-10 mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
+            <div className="relative z-10 mb-12">
                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white lg:px-8 mb-2">
                     {t('projects')}
                 </h2>
-                <div className="w-20 h-1 bg-emerald-600 rounded-full lg:ml-8" />
-            </motion.div>
+                <div className="w-20 h-px bg-gray-300 dark:bg-green-500 lg:ml-8" />
+            </div>
 
             <div className="w-full lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -63,13 +57,13 @@ export function Projects() {
                         fallback={
                             <>
                                 {[...Array(2)].map((_, i) => (
-                                    <div key={i} className="h-[420px] rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 animate-pulse" />
+                                    <div key={i} className="h-[420px] rounded-lg border border-gray-300 dark:border-gray-800 bg-gray-100 dark:bg-[#0a0a0a] animate-pulse" />
                                 ))}
                             </>
                         }
                     >
-                        {projects.map((project, index) => (
-                            <Project key={project.title} project={project} index={index} />
+                        {projects.map((project) => (
+                            <Project key={project.title} project={project} />
                         ))}
                     </Suspense>
                 </div>
