@@ -24,7 +24,7 @@ export function Project({ project }: { project: Project }) {
   const { i18n } = useTranslation()
 
   return (
-    <div className="group relative w-full border border-gray-300 dark:border-gray-800 dark:group-hover:border-green-500/50 bg-white dark:bg-[#0a0a0a] rounded-lg overflow-hidden transition-colors">
+    <div className="group relative w-full border border-gray-300 dark:border-gray-800 group-hover:border-green-500 dark:group-hover:border-green-500 bg-white dark:bg-[#0a0a0a] rounded-lg overflow-hidden transition-colors">
       <div className="relative h-full flex flex-col">
         {/* Image section */}
         <div className="relative overflow-hidden flex-shrink-0 flex justify-center items-center bg-gray-100 dark:bg-[#0a0a0a]">
@@ -62,7 +62,7 @@ export function Project({ project }: { project: Project }) {
           {/* Action buttons */}
           <div className="flex gap-3 mt-6">
             <a
-              className="flex-1 border border-gray-300 dark:border-gray-800 dark:hover:border-green-500/50 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
+              className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +73,7 @@ export function Project({ project }: { project: Project }) {
 
             {project.previewUrl && (
               <a
-                className="flex-1 border border-gray-300 dark:border-gray-800 dark:hover:border-green-500/50 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
+                className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
                 href={project.previewUrl}
                 target="_blank"
                 rel="noopener noreferrer"

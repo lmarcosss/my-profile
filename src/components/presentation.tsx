@@ -76,7 +76,7 @@ export function Presentation() {
                   rel="noopener noreferrer"
                   data-umami-event={`${name} link clicked`}
                   aria-label={`${t('url-link-aria-label')} ${name}`}
-                  className="group p-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-gray-900 hover:border-green-500 dark:hover:border-green-500 transition-colors"
+                  className="group p-3 rounded border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 transition-colors"
                 >
                   <Icon className="size-5 text-gray-700 dark:text-gray-300 group-hover:text-green-500 dark:group-hover:text-green-500 transition-colors" />
                 </a>

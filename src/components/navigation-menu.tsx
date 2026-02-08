@@ -65,7 +65,7 @@ export function NavigationMenu() {
               href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-900 dark:hover:border-green-500/50 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
               aria-label={t('curriculum-vitae-navigation')}
             >
               <FileText className="w-4 h-4" />
@@ -74,7 +74,7 @@ export function NavigationMenu() {
 
             <button
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              className="p-2 border border-gray-300 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 dark:hover:border-green-500/50 transition-colors"
+              className="p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
               aria-label={`${t('theme-switcher')} ${t(theme === 'light' ? 'current-dark-mode' : 'current-light-mode')}`}
             >
               {theme === 'light' ? (
@@ -92,7 +92,7 @@ export function NavigationMenu() {
                     : LanguagesEnum.PORTUGUESE
                 )
               }}
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
               aria-label={`${t('language-switcher')} ${t('language-switcher-current')} ${languages[i18n.language as Language].name}`}
             >
               <img
@@ -110,7 +110,7 @@ export function NavigationMenu() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -130,7 +130,7 @@ export function NavigationMenu() {
                 href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <FileText className="w-5 h-5" />
@@ -140,7 +140,7 @@ export function NavigationMenu() {
               <div className="flex items-center justify-between gap-2">
                 <button
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                  className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1"
+                  className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors flex-1"
                 >
                   {theme === 'dark' ? (
                     <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
@@ -160,7 +160,7 @@ export function NavigationMenu() {
                         : LanguagesEnum.PORTUGUESE
                     )
                   }}
-                  className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors flex-1"
+                  className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors flex-1"
                 >
                   <img
                     src={languages[i18n.language as Language].flag}
