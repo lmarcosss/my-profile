@@ -3,6 +3,7 @@ import brFlag from '../assets/flags/br.svg'
 import usFlag from '../assets/flags/us.svg'
 
 import { useTheme } from '@/contexts/theme-provider'
+import { features, type Feature } from '@/config/features'
 import { Moon, Sun, FileText, Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useState, useEffect, useRef } from 'react'
@@ -26,10 +27,24 @@ enum LanguagesEnum {
 
 type Language = LanguagesEnum
 
-const navLinks = [
+const navLinks: {
+  path: string
+  labelKey: string
+  feature?: Feature
+}[] = [
   { path: '/', labelKey: 'nav-home' },
-  { path: '/projects', labelKey: 'nav-projects' },
+  { path: '/projects', labelKey: 'nav-projects', feature: 'projects' },
+  { path: '/articles', labelKey: 'nav-articles', feature: 'articles' },
 ]
+
+const visibleNavLinks = navLinks.filter(
+  (link) => !link.feature || features[link.feature],
+)
+
+function isNavActive(pathname: string, path: string) {
+  if (path === '/') return pathname === '/'
+  return pathname === path || pathname.startsWith(`${path}/`)
+}
 
 export function NavigationMenu() {
   const { setTheme, theme } = useTheme()
@@ -72,12 +87,12 @@ export function NavigationMenu() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <nav className="flex items-center gap-1 mr-2">
-              {navLinks.map(({ path, labelKey }) => (
+              {visibleNavLinks.map(({ path, labelKey }) => (
                 <Link
                   key={path}
                   to={path}
                   className={`px-3 py-2 text-sm font-medium transition-colors ${
-                    location.pathname === path
+                    isNavActive(location.pathname, path)
                       ? 'text-green-500'
                       : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-600'
                   }`}
@@ -152,13 +167,13 @@ export function NavigationMenu() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 p-4 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a]">
             <div className="flex flex-col space-y-3 w-full">
-              {navLinks.map(({ path, labelKey }) => (
+              {visibleNavLinks.map(({ path, labelKey }) => (
                 <Link
                   key={path}
                   to={path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] transition-colors ${
-                    location.pathname === path
+                    isNavActive(location.pathname, path)
                       ? 'text-green-500 border-green-500'
                       : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-600 hover:border-green-600 dark:hover:text-green-600 dark:hover:border-green-600'
                   }`}
