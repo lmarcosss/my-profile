@@ -79,7 +79,7 @@ export function NavigationMenu() {
                   className={`px-3 py-2 text-sm font-medium transition-colors ${
                     location.pathname === path
                       ? 'text-green-500'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-500'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-600'
                   }`}
                 >
                   {t(labelKey)}
@@ -88,7 +88,7 @@ export function NavigationMenu() {
             </nav>
 
             <a
-              href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
+              href="https://drive.google.com/file/d/1BRlSVcKFosO2aro4siYGK-gPAfBROZJI/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
@@ -160,7 +160,7 @@ export function NavigationMenu() {
                   className={`px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] transition-colors ${
                     location.pathname === path
                       ? 'text-green-500 border-green-500'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-600 hover:border-green-600 dark:hover:text-green-600 dark:hover:border-green-600'
                   }`}
                 >
                   <span className="text-sm">{t(labelKey)}</span>

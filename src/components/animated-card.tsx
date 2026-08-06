@@ -26,6 +26,7 @@ export const AnimatedCard = ({
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.6 }}
           style={{ backfaceVisibility: 'hidden' }}
+          data-umami-event="Easter egg found"
         >
           {children}
         </motion.div>
@@ -45,6 +46,7 @@ export const AnimatedCard = ({
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.youtube.com/watch?v=YLy-X0QWuWA"
+              data-umami-event="Easter egg video clicked"
             >
               {t('easteregg-pt2')}
             </a>

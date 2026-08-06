@@ -14,7 +14,7 @@ export default function App() {
       <BrowserRouter>
         <div className="min-h-screen flex flex-col bg-white dark:bg-[#0a0a0a]">
           <NavigationMenu />
-          <div className="pt-20 flex-1">
+          <div className="pt-20 flex-1 flex flex-col">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<ProjectsPage />} />
