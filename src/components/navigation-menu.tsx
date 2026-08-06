@@ -6,6 +6,7 @@ import { useTheme } from '@/contexts/theme-provider'
 import { Moon, Sun, FileText, Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useState, useEffect, useRef } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const languages = {
   'pt-BR': {
@@ -25,11 +26,17 @@ enum LanguagesEnum {
 
 type Language = LanguagesEnum
 
+const navLinks = [
+  { path: '/', labelKey: 'nav-home' },
+  { path: '/projects', labelKey: 'nav-projects' },
+]
+
 export function NavigationMenu() {
   const { setTheme, theme } = useTheme()
   const { i18n, t } = useTranslation()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
+  const location = useLocation()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -55,12 +62,31 @@ export function NavigationMenu() {
       <div className="w-full px-6 py-4">
         <div className="flex items-center justify-between w-full">
           {/* Logo/Brand */}
-          <div className="text-2xl font-bold text-gray-900 dark:text-green-500">
+          <Link
+            to="/"
+            className="text-2xl font-bold text-gray-900 dark:text-green-500"
+          >
             Leo.
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
+            <nav className="flex items-center gap-1 mr-2">
+              {navLinks.map(({ path, labelKey }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className={`px-3 py-2 text-sm font-medium transition-colors ${
+                    location.pathname === path
+                      ? 'text-green-500'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-green-500 dark:hover:text-green-500'
+                  }`}
+                >
+                  {t(labelKey)}
+                </Link>
+              ))}
+            </nav>
+
             <a
               href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
               target="_blank"
@@ -126,6 +152,21 @@ export function NavigationMenu() {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 p-4 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a]">
             <div className="flex flex-col space-y-3 w-full">
+              {navLinks.map(({ path, labelKey }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] transition-colors ${
+                    location.pathname === path
+                      ? 'text-green-500 border-green-500'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500'
+                  }`}
+                >
+                  <span className="text-sm">{t(labelKey)}</span>
+                </Link>
+              ))}
+
               <a
                 href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
                 target="_blank"

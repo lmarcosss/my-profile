@@ -28,6 +28,7 @@ export default defineConfig({
             'tailwindcss-animate',
           ],
           internationalization: ['i18next', 'react-i18next'],
+          router: ['react-router-dom'],
         },
       },
     },
