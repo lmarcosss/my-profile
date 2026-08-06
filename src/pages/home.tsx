@@ -43,7 +43,7 @@ export function Home() {
             <img
               src={profileImage}
               alt={t('profile-image-alt')}
-              className="rounded-full border-2 w-48 h-48 object-cover dark:border-green-500 border-gray-300"
+              className="rounded-full border-2 w-48 h-48 object-cover border-gray-900 dark:border-green-500"
             />
           </AnimatedCard>
         </div>

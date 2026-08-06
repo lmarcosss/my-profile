@@ -36,6 +36,7 @@ const resources = {
       'see-cv': 'See CV',
       'dark-mode': 'Dark Mode',
       'light-mode': 'Light Mode',
+      'mobile-menu-toggle': 'Toggle mobile menu',
     },
   },
 
@@ -72,6 +73,7 @@ const resources = {
       'see-cv': 'Ver CV',
       'dark-mode': 'Tema escuro',
       'light-mode': 'Tema claro',
+      'mobile-menu-toggle': 'Abrir ou fechar menu',
     },
   },
 }

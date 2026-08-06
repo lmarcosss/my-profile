@@ -10,8 +10,6 @@ import { ProjectsPage } from './pages/projects'
 import { ArticlesPage } from './pages/articles'
 import { ArticlePage } from './pages/article'
 
-import './App.css'
-
 function AppRoutes() {
   const location = useLocation()
 

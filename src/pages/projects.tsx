@@ -55,7 +55,7 @@ export function ProjectsPage() {
             key={project.title}
             className="group relative w-full border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 bg-white dark:bg-[#0a0a0a] rounded-lg overflow-hidden transition-colors"
           >
-            <div className="relative overflow-hidden flex justify-center items-center bg-gray-100 dark:bg-[#0a0a0a]">
+            <div className="relative overflow-hidden flex justify-center items-center bg-gray-100 dark:bg-[#141414]">
               <img
                 src={project.image.source}
                 className={project.image.className}
@@ -93,7 +93,7 @@ export function ProjectsPage() {
                   rel="noopener noreferrer"
                 >
                   <GitHubLogoIcon className="w-4 h-4" />
-                  <span>Código</span>
+                  <span>{t('see-code')}</span>
                 </a>
 
                 {project.previewUrl && (
@@ -104,7 +104,7 @@ export function ProjectsPage() {
                     rel="noopener noreferrer"
                   >
                     <ExternalLinkIcon className="w-4 h-4" />
-                    <span>Demo</span>
+                    <span>{t('see-preview')}</span>
                   </a>
                 )}
               </div>
