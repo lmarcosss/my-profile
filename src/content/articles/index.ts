@@ -38,3 +38,15 @@ export const articles: Article[] = [
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug)
 }
+
+if (import.meta.env.DEV) {
+  const hello = getArticle('hello-world')
+  console.assert(
+    !!hello?.content['en-US'] && !!hello?.content['pt-BR'],
+    'hello-world must have en-US and pt-BR content',
+  )
+  console.assert(
+    getArticle('missing-slug') === undefined,
+    'unknown slug must be undefined',
+  )
+}

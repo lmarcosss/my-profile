@@ -1,10 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { MailIcon } from 'lucide-react'
-import {
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-  LinkedInLogoIcon,
-} from '@radix-ui/react-icons'
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react'
 
 import { AnimatedCard } from '@/components/animated-card'
 import profileImage from '../assets/profile-image.webp'
@@ -12,22 +7,22 @@ import profileImage from '../assets/profile-image.webp'
 const urls = [
   {
     url: 'https://github.com/lmarcosss',
-    icon: GitHubLogoIcon,
+    icon: Github,
     name: 'GitHub',
   },
   {
     url: 'https://www.linkedin.com/in/leo-marcos',
-    icon: LinkedInLogoIcon,
+    icon: Linkedin,
     name: 'LinkedIn',
   },
   {
     url: 'https://www.instagram.com/leomarcoss',
-    icon: InstagramLogoIcon,
+    icon: Instagram,
     name: 'Instagram',
   },
   {
-    url: 'mailto: marcosleonardosss@gmail.com',
-    icon: MailIcon,
+    url: 'mailto:marcosleonardosss@gmail.com',
+    icon: Mail,
     name: 'Email',
   },
 ]

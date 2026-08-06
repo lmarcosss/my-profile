@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type KeyboardEvent } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
@@ -14,11 +14,22 @@ export const AnimatedCard = ({
     setFlipped(!flipped)
   }
 
+  const onKeyDown = (event: KeyboardEvent) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      onToggleFlip()
+    }
+  }
+
   return (
     <div className="flex items-center justify-center flex-row">
       <motion.div
         className="relative w-48 h-48 cursor-pointer"
         onClick={onToggleFlip}
+        onKeyDown={onKeyDown}
+        role="button"
+        tabIndex={0}
+        aria-label={t('profile-image-alt')}
         style={{ perspective: 1000 }}
       >
         <motion.div

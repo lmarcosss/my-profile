@@ -32,6 +32,4 @@ if (scriptUrl && websiteId) {
     scriptUrl,
     websiteId,
   })
-} else {
-  console.log('Umami analytics not configured. Set VITE_UMAMI_SCRIPT_URL and VITE_UMAMI_WEBSITE_ID environment variables to enable analytics.')
 }

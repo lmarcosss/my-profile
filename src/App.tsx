@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 
@@ -7,8 +8,18 @@ import { Footer } from './components/footer'
 import { features } from './config/features'
 import { Home } from './pages/home'
 import { ProjectsPage } from './pages/projects'
-import { ArticlesPage } from './pages/articles'
-import { ArticlePage } from './pages/article'
+
+const ArticlesPage = import.meta.env.DEV
+  ? lazy(() =>
+      import('./pages/articles').then((m) => ({ default: m.ArticlesPage })),
+    )
+  : null
+
+const ArticlePage = import.meta.env.DEV
+  ? lazy(() =>
+      import('./pages/article').then((m) => ({ default: m.ArticlePage })),
+    )
+  : null
 
 function AppRoutes() {
   const location = useLocation()
@@ -31,18 +42,34 @@ function AppRoutes() {
               features.projects ? <ProjectsPage /> : <Navigate to="/" replace />
             }
           />
-          <Route
-            path="/articles"
-            element={
-              features.articles ? <ArticlesPage /> : <Navigate to="/" replace />
-            }
-          />
-          <Route
-            path="/articles/:slug"
-            element={
-              features.articles ? <ArticlePage /> : <Navigate to="/" replace />
-            }
-          />
+          {ArticlesPage && ArticlePage ? (
+            <>
+              <Route
+                path="/articles"
+                element={
+                  <Suspense fallback={null}>
+                    <ArticlesPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/articles/:slug"
+                element={
+                  <Suspense fallback={null}>
+                    <ArticlePage />
+                  </Suspense>
+                }
+              />
+            </>
+          ) : (
+            <>
+              <Route path="/articles" element={<Navigate to="/" replace />} />
+              <Route
+                path="/articles/:slug"
+                element={<Navigate to="/" replace />}
+              />
+            </>
+          )}
         </Routes>
       </motion.div>
     </AnimatePresence>

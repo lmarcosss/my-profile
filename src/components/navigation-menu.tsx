@@ -110,7 +110,7 @@ export function NavigationMenu() {
               target="_blank"
               rel="noopener noreferrer"
               data-umami-event="CV link clicked"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors"
               aria-label={t('curriculum-vitae-navigation')}
             >
               <FileText className="w-4 h-4" />
@@ -124,7 +124,7 @@ export function NavigationMenu() {
                   ? 'Theme switched to dark'
                   : 'Theme switched to light'
               }
-              className="p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
+              className="p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors"
               aria-label={`${t('theme-switcher')}. ${t(theme === 'light' ? 'current-light-mode' : 'current-dark-mode')}`}
             >
               {theme === 'light' ? (
@@ -143,7 +143,7 @@ export function NavigationMenu() {
                 )
               }}
               data-umami-event="Language switched"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors"
               aria-label={`${t('language-switcher')} ${t('language-switcher-current')} ${languages[i18n.language as Language].name}`}
             >
               <img
@@ -161,7 +161,7 @@ export function NavigationMenu() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
+            className="md:hidden p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={t('mobile-menu-toggle')}
             aria-expanded={isMobileMenuOpen}
@@ -206,7 +206,7 @@ export function NavigationMenu() {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-umami-event="CV link clicked"
-                    className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
+                    className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                     aria-label={t('curriculum-vitae-navigation')}
                   >
@@ -222,7 +222,7 @@ export function NavigationMenu() {
                           ? 'Theme switched to dark'
                           : 'Theme switched to light'
                       }
-                      className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors flex-1"
+                      className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors flex-1"
                       aria-label={`${t('theme-switcher')}. ${t(theme === 'light' ? 'current-light-mode' : 'current-dark-mode')}`}
                     >
                       {theme === 'light' ? (
@@ -244,7 +244,7 @@ export function NavigationMenu() {
                         )
                       }}
                       data-umami-event="Language switched"
-                      className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors flex-1"
+                      className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 transition-colors flex-1"
                     >
                       <img
                         src={languages[i18n.language as Language].flag}

@@ -1,4 +1,4 @@
-import { GitHubLogoIcon, ExternalLinkIcon } from '@radix-ui/react-icons'
+import { ExternalLink, Github } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 import filmeFlixImage from '../assets/projects/movie.png'
@@ -92,7 +92,7 @@ export function ProjectsPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GitHubLogoIcon className="w-4 h-4" />
+                  <Github className="w-4 h-4" />
                   <span>{t('see-code')}</span>
                 </a>
 
@@ -103,7 +103,7 @@ export function ProjectsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLinkIcon className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                     <span>{t('see-preview')}</span>
                   </a>
                 )}

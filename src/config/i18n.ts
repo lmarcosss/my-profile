@@ -6,7 +6,6 @@ export type Language = 'en-US' | 'pt-BR'
 const resources = {
   'en-US': {
     translation: {
-      'welcome-react': 'Welcome to React and react-i18next',
       'title-pt1': "Hi, I'm Leo. I'm a",
       'title-pt2': 'Software Developer.',
       description: `I'm a software engineer with 6+ years of experience
@@ -42,7 +41,6 @@ const resources = {
 
   'pt-BR': {
     translation: {
-      'welcome-react': 'Bem-vindo ao React e react-i18next',
       'title-pt1': 'Oi, sou o Leo e sou ',
       'title-pt2': 'Desenvolvedor de Software.',
       description: `Sou um engenheiro de software com mais de 6 anos de experiência
@@ -78,6 +76,10 @@ const resources = {
   },
 }
 
+function syncDocumentLang(lng: string) {
+  document.documentElement.lang = lng
+}
+
 i18n.use(initReactI18next).init({
   resources,
   lng: 'en-US', // default language
@@ -86,5 +88,8 @@ i18n.use(initReactI18next).init({
     escapeValue: false, // react already safes from xss
   },
 })
+
+syncDocumentLang(i18n.language)
+i18n.on('languageChanged', syncDocumentLang)
 
 export default i18n
