@@ -106,6 +106,7 @@ export function NavigationMenu() {
               href="https://drive.google.com/file/d/1BRlSVcKFosO2aro4siYGK-gPAfBROZJI/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
+              data-umami-event="CV link clicked"
               className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
               aria-label={t('curriculum-vitae-navigation')}
             >
@@ -115,6 +116,11 @@ export function NavigationMenu() {
 
             <button
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              data-umami-event={
+                theme === 'light'
+                  ? 'Theme switched to dark'
+                  : 'Theme switched to light'
+              }
               className="p-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
               aria-label={`${t('theme-switcher')} ${t(theme === 'light' ? 'current-dark-mode' : 'current-light-mode')}`}
             >
@@ -133,6 +139,7 @@ export function NavigationMenu() {
                     : LanguagesEnum.PORTUGUESE
                 )
               }}
+              data-umami-event="Language switched"
               className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
               aria-label={`${t('language-switcher')} ${t('language-switcher-current')} ${languages[i18n.language as Language].name}`}
             >
@@ -186,6 +193,7 @@ export function NavigationMenu() {
                 href="https://drive.google.com/file/d/1vmTAvVfkky9odcT6wZl2dKVHQXIzT1JQ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="CV link clicked"
                 className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -196,6 +204,11 @@ export function NavigationMenu() {
               <div className="flex items-center justify-between gap-2">
                 <button
                   onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                  data-umami-event={
+                    theme === 'light'
+                      ? 'Theme switched to dark'
+                      : 'Theme switched to light'
+                  }
                   className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors flex-1"
                 >
                   {theme === 'dark' ? (
@@ -216,6 +229,7 @@ export function NavigationMenu() {
                         : LanguagesEnum.PORTUGUESE
                     )
                   }}
+                  data-umami-event="Language switched"
                   className="flex items-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-800 bg-white dark:bg-[#0a0a0a] hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:border-green-500 dark:hover:border-green-500 focus:outline-none transition-colors flex-1"
                 >
                   <img

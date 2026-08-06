@@ -27,6 +27,7 @@ export function ArticlesPage() {
           <Link
             key={article.slug}
             to={`/articles/${article.slug}`}
+            data-umami-event={`Article ${article.slug} clicked`}
             className="group border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 rounded-lg overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors"
           >
             <img

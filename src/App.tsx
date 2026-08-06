@@ -1,4 +1,5 @@
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
 
 import { ThemeProvider } from './contexts/theme-provider'
 import { NavigationMenu } from './components/navigation-menu'
@@ -11,6 +12,45 @@ import { ArticlePage } from './pages/article'
 
 import './App.css'
 
+function AppRoutes() {
+  const location = useLocation()
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
+        className="flex-1 flex flex-col"
+      >
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/projects"
+            element={
+              features.projects ? <ProjectsPage /> : <Navigate to="/" replace />
+            }
+          />
+          <Route
+            path="/articles"
+            element={
+              features.articles ? <ArticlesPage /> : <Navigate to="/" replace />
+            }
+          />
+          <Route
+            path="/articles/:slug"
+            element={
+              features.articles ? <ArticlePage /> : <Navigate to="/" replace />
+            }
+          />
+        </Routes>
+      </motion.div>
+    </AnimatePresence>
+  )
+}
+
 export default function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -18,27 +58,7 @@ export default function App() {
         <div className="min-h-screen flex flex-col bg-white dark:bg-[#0a0a0a]">
           <NavigationMenu />
           <div className="pt-20 flex-1 flex flex-col">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/projects"
-                element={
-                  features.projects ? <ProjectsPage /> : <Navigate to="/" replace />
-                }
-              />
-              <Route
-                path="/articles"
-                element={
-                  features.articles ? <ArticlesPage /> : <Navigate to="/" replace />
-                }
-              />
-              <Route
-                path="/articles/:slug"
-                element={
-                  features.articles ? <ArticlePage /> : <Navigate to="/" replace />
-                }
-              />
-            </Routes>
+            <AppRoutes />
           </div>
           <Footer />
         </div>
