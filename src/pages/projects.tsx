@@ -85,25 +85,25 @@ export function ProjectsPage() {
                 </p>
               </div>
 
-              <div className="flex gap-3 mt-6">
+              <div className="flex gap-2 mt-6">
                 <a
-                  className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
+                  className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-3 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm whitespace-nowrap"
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4 shrink-0" />
                   <span>{t('see-code')}</span>
                 </a>
 
                 {project.previewUrl && (
                   <a
-                    className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-4 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm min-w-[120px]"
+                    className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-3 py-2 rounded flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm whitespace-nowrap"
                     href={project.previewUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4 shrink-0" />
                     <span>{t('see-preview')}</span>
                   </a>
                 )}
