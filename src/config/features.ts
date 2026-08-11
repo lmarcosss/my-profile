@@ -1,6 +1,6 @@
 export const features = {
   projects: true,
-  articles: import.meta.env.DEV,
+  articles: true,
 } as const
 
 export type Feature = keyof typeof features

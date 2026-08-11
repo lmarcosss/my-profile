@@ -1,8 +1,8 @@
 import type { Language } from '@/config/i18n'
-import coverImage from '../../assets/profile-image.webp'
 
-import helloWorldEn from './hello-world/en-US.md?raw'
-import helloWorldPt from './hello-world/pt-BR.md?raw'
+import migratingDotnetEn from './migrating-dotnet-to-10/en-US.md?raw'
+import migratingDotnetPt from './migrating-dotnet-to-10/pt-BR.md?raw'
+import migratingDotnetCover from './migrating-dotnet-to-10/image.png'
 
 export type Article = {
   slug: string
@@ -16,21 +16,21 @@ export type Article = {
 
 export const articles: Article[] = [
   {
-    slug: 'hello-world',
+    slug: 'migrating-dotnet-to-10',
     title: {
-      'en-US': 'Hello, world',
-      'pt-BR': 'Olá, mundo',
+      'en-US': 'Migrating from .NET 6/7 to .NET 10',
+      'pt-BR': 'Migrando de .NET 6/7 para .NET 10',
     },
     image: {
-      source: coverImage,
+      source: migratingDotnetCover,
       alt: {
-        'en-US': 'Cover image for Hello, world',
-        'pt-BR': 'Imagem de capa de Olá, mundo',
+        'en-US': 'Cover image for Migrating from .NET 6/7 to .NET 10',
+        'pt-BR': 'Imagem de capa de Migrando de .NET 6/7 para .NET 10',
       },
     },
     content: {
-      'en-US': helloWorldEn,
-      'pt-BR': helloWorldPt,
+      'en-US': migratingDotnetEn,
+      'pt-BR': migratingDotnetPt,
     },
   },
 ]
@@ -40,10 +40,10 @@ export function getArticle(slug: string) {
 }
 
 if (import.meta.env.DEV) {
-  const hello = getArticle('hello-world')
+  const article = getArticle('migrating-dotnet-to-10')
   console.assert(
-    !!hello?.content['en-US'] && !!hello?.content['pt-BR'],
-    'hello-world must have en-US and pt-BR content',
+    !!article?.content['en-US'] && !!article?.content['pt-BR'],
+    'migrating-dotnet-to-10 must have en-US and pt-BR content',
   )
   console.assert(
     getArticle('missing-slug') === undefined,

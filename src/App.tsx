@@ -9,13 +9,13 @@ import { features } from './config/features'
 import { Home } from './pages/home'
 import { ProjectsPage } from './pages/projects'
 
-const ArticlesPage = import.meta.env.DEV
+const ArticlesPage = features.articles
   ? lazy(() =>
       import('./pages/articles').then((m) => ({ default: m.ArticlesPage })),
     )
   : null
 
-const ArticlePage = import.meta.env.DEV
+const ArticlePage = features.articles
   ? lazy(() =>
       import('./pages/article').then((m) => ({ default: m.ArticlePage })),
     )

@@ -17,4 +17,4 @@ Use **npm** (the Dockerfile and README use it, and `package-lock.json` is the au
 - `npm run build` prints a harmless "browsers data (caniuse-lite) is X months old" Browserslist notice; ignore it.
 - There is no `test` script. Articles content has a small DEV-only `console.assert` self-check in `src/content/articles/index.ts`.
 - Optional Umami analytics is configured via env vars (`src/config/umami.ts`); it is not required to run the app.
-- Articles routes are DEV-only (`features.articles`); they are lazy-loaded so `react-markdown` is not in the production main bundle.
+- Articles routes are gated by `features.articles` and lazy-loaded so `react-markdown` is not in the production main bundle.
