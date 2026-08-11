@@ -3,6 +3,17 @@ interface UmamiConfig {
   websiteId: string
 }
 
+declare global {
+  interface Window {
+    umami?: { track: (event: string, data?: Record<string, unknown>) => void }
+  }
+}
+
+/** Prefer this on React Router <Link> — data-umami-event forces a full page load. */
+export function trackEvent(event: string, data?: Record<string, unknown>) {
+  window.umami?.track(event, data)
+}
+
 function initUmamiAnalytics({
   scriptUrl,
   websiteId,

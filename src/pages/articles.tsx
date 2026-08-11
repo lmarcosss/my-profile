@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import { articles } from '@/content/articles'
 import type { Language } from '@/config/i18n'
+import { trackEvent } from '@/config/umami'
 
 function peek(md: string, max = 120) {
   const text = md.replace(/[#*_`>\-[\]()!]/g, ' ').replace(/\s+/g, ' ').trim()
@@ -27,7 +28,7 @@ export function ArticlesPage() {
           <Link
             key={article.slug}
             to={`/articles/${article.slug}`}
-            data-umami-event={`Article ${article.slug} clicked`}
+            onClick={() => trackEvent(`Article ${article.slug} clicked`)}
             className="group border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 rounded-lg overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors"
           >
             <img

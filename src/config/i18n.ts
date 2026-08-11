@@ -76,13 +76,21 @@ const resources = {
   },
 }
 
+const LANGUAGE_KEY = 'vite-ui-language'
+
+function getStoredLanguage(): Language {
+  const stored = localStorage.getItem(LANGUAGE_KEY)
+  return stored === 'pt-BR' || stored === 'en-US' ? stored : 'en-US'
+}
+
 function syncDocumentLang(lng: string) {
   document.documentElement.lang = lng
 }
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en-US', // default language
+  lng: getStoredLanguage(),
+  fallbackLng: 'en-US',
   supportedLngs: ['en-US', 'pt-BR'],
   interpolation: {
     escapeValue: false, // react already safes from xss
@@ -90,6 +98,11 @@ i18n.use(initReactI18next).init({
 })
 
 syncDocumentLang(i18n.language)
-i18n.on('languageChanged', syncDocumentLang)
+i18n.on('languageChanged', (lng) => {
+  syncDocumentLang(lng)
+  if (lng === 'en-US' || lng === 'pt-BR') {
+    localStorage.setItem(LANGUAGE_KEY, lng)
+  }
+})
 
 export default i18n
