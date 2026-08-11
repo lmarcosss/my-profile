@@ -6,7 +6,7 @@ export type Language = 'en-US' | 'pt-BR'
 const resources = {
   'en-US': {
     translation: {
-      'title-pt1': "Hi, I'm Leo. I'm a",
+      'title-pt1': "Hi, I'm Leo. I'm a ",
       'title-pt2': 'Software Developer.',
       description: `I'm a software engineer with 6+ years of experience
                   designing and building efficient, user-focused
