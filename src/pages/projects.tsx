@@ -1,31 +1,12 @@
-import { Code2, ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
-const projects = [
-  {
-    title: 'Filme flix',
-    description: {
-      'en-US': 'Flutter project using TMDB API',
-      'pt-BR': 'Projeto Flutter utilizando a API do TMDB',
-    },
-    githubUrl: 'https://github.com/lmarcosss/filme-flix',
-    tech: ['Flutter', 'Dart', 'TMDB API'],
-  },
-  {
-    title: 'Pokemon Evolution',
-    description: {
-      'en-US': 'Next.js project using PokeAPI',
-      'pt-BR': 'Projeto Next.js utilizando a PokeAPI',
-    },
-    previewUrl: 'https://pokemon-evolution.devleo.tech',
-    githubUrl: 'https://github.com/lmarcosss/pokemon-evolution',
-    tech: ['Next.js', 'TypeScript', 'PokeAPI'],
-  },
-]
+import { projects } from '@/content/projects'
+import type { Language } from '@/config/i18n'
 
 export function ProjectsPage() {
   const { t, i18n } = useTranslation()
-  const lang = i18n.language as 'en-US' | 'pt-BR'
+  const lang = i18n.language as Language
 
   return (
     <section className="px-6 py-8 lg:px-14 text-left">
@@ -39,15 +20,15 @@ export function ProjectsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => (
           <div
-            key={project.title}
+            key={project.slug}
             className="group flex h-full flex-col border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 rounded-lg overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors"
           >
-            <div
-              className="flex h-40 w-full items-center justify-center bg-gray-100 dark:bg-[#141414]"
-              aria-hidden
-            >
-              <Code2 className="h-10 w-10 text-gray-400 dark:text-gray-600" />
-            </div>
+            <img
+              src={project.image.source}
+              alt={project.image.alt[lang]}
+              className="w-full h-40 object-cover"
+              loading="lazy"
+            />
             <div className="flex flex-1 flex-col p-4">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-green-500 dark:group-hover:text-green-500 transition-colors mb-2">
                 {project.title}
