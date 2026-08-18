@@ -18,14 +18,14 @@ export const articles: Article[] = [
   {
     slug: 'migrating-dotnet-to-10',
     title: {
-      'en-US': 'Migrating from .NET 6/7 to .NET 10',
-      'pt-BR': 'Migrando de .NET 6/7 para .NET 10',
+      'en-US': 'Migrating from .NET 6/7/8 to .NET 10',
+      'pt-BR': 'Migrando de .NET 6/7/8 para .NET 10',
     },
     image: {
       source: migratingDotnetCover,
       alt: {
-        'en-US': 'Cover image for Migrating from .NET 6/7 to .NET 10',
-        'pt-BR': 'Imagem de capa de Migrando de .NET 6/7 para .NET 10',
+        'en-US': 'Cover image for Migrating from .NET 6/7/8 to .NET 10',
+        'pt-BR': 'Imagem de capa de Migrando de .NET 6/7/8 para .NET 10',
       },
     },
     content: {
