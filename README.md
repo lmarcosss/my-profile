@@ -4,12 +4,14 @@ Personal portfolio for Leonardo Marcos — React 18 + TypeScript + Vite static s
 
 ## Stack
 
-- React 18, TypeScript, Vite
+- React 18, TypeScript, Vite 8 (Rolldown)
 - Tailwind CSS, Framer Motion
 - react-router-dom, i18next (en-US / pt-BR)
 - Optional [Umami](https://umami.is/) analytics via env vars
 
 ## Commands
+
+Requires **Node 24** (see `.nvmrc`; Vite 8 needs `^20.19 || >=22.12`).
 
 ```bash
 npm install
