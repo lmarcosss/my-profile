@@ -1,6 +1,12 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Navigate, Routes, Route, useLocation } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
+import {
+  BrowserRouter,
+  Navigate,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom'
+import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
 
 import { ThemeProvider } from './contexts/theme-provider'
 import { NavigationMenu } from './components/navigation-menu'
@@ -11,13 +17,17 @@ import { ProjectsPage } from './pages/projects'
 
 const ArticlesPage = features.articles
   ? lazy(() =>
-      import('./pages/articles').then((m) => ({ default: m.ArticlesPage })),
+      import('./pages/articles').then((m) => ({
+        default: m.ArticlesPage,
+      }))
     )
   : null
 
 const ArticlePage = features.articles
   ? lazy(() =>
-      import('./pages/article').then((m) => ({ default: m.ArticlePage })),
+      import('./pages/article').then((m) => ({
+        default: m.ArticlePage,
+      }))
     )
   : null
 
@@ -39,7 +49,11 @@ function AppRoutes() {
           <Route
             path="/projects"
             element={
-              features.projects ? <ProjectsPage /> : <Navigate to="/" replace />
+              features.projects ? (
+                <ProjectsPage />
+              ) : (
+                <Navigate to="/" replace />
+              )
             }
           />
           {ArticlesPage && ArticlePage ? (
@@ -63,7 +77,10 @@ function AppRoutes() {
             </>
           ) : (
             <>
-              <Route path="/articles" element={<Navigate to="/" replace />} />
+              <Route
+                path="/articles"
+                element={<Navigate to="/" replace />}
+              />
               <Route
                 path="/articles/:slug"
                 element={<Navigate to="/" replace />}
@@ -79,15 +96,17 @@ function AppRoutes() {
 export default function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <BrowserRouter>
-        <div className="min-h-screen flex flex-col bg-white dark:bg-[#0a0a0a]">
-          <NavigationMenu />
-          <div className="pt-20 flex-1 flex flex-col">
-            <AppRoutes />
+      <MotionConfig reducedMotion="user">
+        <BrowserRouter>
+          <div className="flex min-h-screen flex-col">
+            <NavigationMenu />
+            <main className="flex flex-1 flex-col">
+              <AppRoutes />
+            </main>
+            <Footer />
           </div>
-          <Footer />
-        </div>
-      </BrowserRouter>
+        </BrowserRouter>
+      </MotionConfig>
     </ThemeProvider>
   )
 }

@@ -48,7 +48,6 @@ export const projects: Project[] = [
         'pt-BR': 'Capa do projeto Pokemon Evolution',
       },
     },
-    previewUrl: 'https://pokemon-evolution.devleo.tech',
     githubUrl: 'https://github.com/lmarcosss/pokemon-evolution',
     tech: ['Next.js', 'TypeScript', 'PokeAPI'],
   },

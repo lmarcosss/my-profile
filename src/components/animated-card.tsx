@@ -24,7 +24,7 @@ export const AnimatedCard = ({
   return (
     <div className="flex items-center justify-center flex-row">
       <motion.div
-        className="relative w-48 h-48 cursor-pointer"
+        className="relative size-48 cursor-pointer rounded-full"
         onClick={onToggleFlip}
         onKeyDown={onKeyDown}
         role="button"
@@ -43,17 +43,17 @@ export const AnimatedCard = ({
         </motion.div>
 
         <motion.div
-          className="absolute inset-0 flex items-center justify-center rounded-full bg-black text-white p-4 border border-yellow-300 ring ring-yellow-300 w-48 h-48"
+          className="absolute inset-0 flex size-48 items-center justify-center rounded-full border border-accent/50 bg-card p-6 text-card-foreground ring-1 ring-accent/40 ring-offset-4 ring-offset-card"
           animate={{ rotateY: flipped ? 0 : -180 }}
           transition={{ duration: 0.6 }}
           initial={false}
           style={{ backfaceVisibility: 'hidden' }}
         >
-          <span className="font-semibold text-xs text-center">
+          <span className="text-center font-mono text-xs leading-relaxed">
             {t('easteregg-pt1')}
             <br />
             <a
-              className="underline text-yellow-300"
+              className="text-accent underline underline-offset-2"
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.youtube.com/watch?v=YLy-X0QWuWA"

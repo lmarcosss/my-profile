@@ -36,6 +36,7 @@ const resources = {
       'dark-mode': 'Dark Mode',
       'light-mode': 'Light Mode',
       'mobile-menu-toggle': 'Toggle mobile menu',
+      'min-read': 'min read',
     },
   },
 
@@ -72,6 +73,7 @@ const resources = {
       'dark-mode': 'Tema escuro',
       'light-mode': 'Tema claro',
       'mobile-menu-toggle': 'Abrir ou fechar menu',
+      'min-read': 'min de leitura',
     },
   },
 }

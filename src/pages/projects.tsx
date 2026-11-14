@@ -1,79 +1,104 @@
-import { ExternalLink, Github } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ArrowUpRight, Github } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
+import { Container } from '@/components/container'
+import { PageHeader } from '@/components/page-header'
 import { projects } from '@/content/projects'
 import type { Language } from '@/config/i18n'
+
+const actionLink =
+  'group/link inline-flex items-center gap-1.5 font-mono text-xs text-muted-foreground transition-colors hover:text-accent'
 
 export function ProjectsPage() {
   const { t, i18n } = useTranslation()
   const lang = i18n.language as Language
 
   return (
-    <section className="px-6 py-8 lg:px-14 text-left">
-      <div className="mb-8">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          {t('projects')}
-        </h2>
-        <div className="w-20 h-px bg-gray-300 dark:bg-green-500" />
-      </div>
+    <section className="py-12 sm:py-16">
+      <Container>
+        <PageHeader
+          command="ls ./projects"
+          title={t('projects')}
+          count={projects.length}
+        />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project) => (
-          <div
-            key={project.slug}
-            className="group flex h-full flex-col border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 rounded-lg overflow-hidden bg-white dark:bg-[#0a0a0a] transition-colors"
-          >
-            <img
-              src={project.image.source}
-              alt={project.image.alt[lang]}
-              className="w-full h-40 object-cover"
-              loading="lazy"
-            />
-            <div className="flex flex-1 flex-col p-4">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-green-500 dark:group-hover:text-green-500 transition-colors mb-2">
-                {project.title}
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
-                {project.description[lang]}
-              </p>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-0.5 border border-gray-300 dark:border-gray-800 rounded text-xs text-gray-600 dark:text-gray-400"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.slug}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.4,
+                delay: 0.1 + index * 0.08,
+              }}
+            >
+              <article className="card-surface group flex h-full flex-col overflow-hidden">
+                <div className="aspect-video overflow-hidden border-b">
+                  <img
+                    src={project.image.source}
+                    alt={project.image.alt[lang]}
+                    className="size-full object-cover transition-transform duration-500
+                      group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                </div>
 
-              <div className="mt-auto flex gap-2">
-                <a
-                  className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm whitespace-nowrap"
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="w-4 h-4 shrink-0" />
-                  <span>{t('see-code')}</span>
-                </a>
+                <div className="flex flex-1 flex-col gap-4 p-5">
+                  <div className="space-y-1.5">
+                    <h2 className="text-lg font-semibold tracking-tight">
+                      {project.title}
+                    </h2>
+                    <p className="line-clamp-2 text-sm text-muted-foreground">
+                      {project.description[lang]}
+                    </p>
+                  </div>
 
-                {project.previewUrl && (
-                  <a
-                    className="flex-1 border border-gray-300 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-500 text-gray-700 dark:text-gray-300 px-3 py-2 rounded-md flex items-center justify-center gap-2 hover:bg-gray-50 dark:hover:bg-[#0f0f0f] hover:text-green-500 dark:hover:text-green-500 transition-colors text-sm whitespace-nowrap"
-                    href={project.previewUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="w-4 h-4 shrink-0" />
-                    <span>{t('see-preview')}</span>
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+                  <ul className="flex flex-wrap gap-1.5">
+                    {project.tech.map((tech) => (
+                      <li key={tech} className="tag">
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex items-center gap-5 border-t pt-4">
+                    <a
+                      className={actionLink}
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="size-3.5" />
+                      {t('see-code').toLowerCase()}
+                      <ArrowUpRight
+                        className="size-3 transition-transform group-hover/link:-translate-y-0.5
+                          group-hover/link:translate-x-0.5"
+                      />
+                    </a>
+
+                    {project.previewUrl && (
+                      <a
+                        className={actionLink}
+                        href={project.previewUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t('see-preview').toLowerCase()}
+                        <ArrowUpRight
+                          className="size-3 transition-transform group-hover/link:-translate-y-0.5
+                            group-hover/link:translate-x-0.5"
+                        />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </motion.div>
+          ))}
+        </div>
+      </Container>
     </section>
   )
 }
